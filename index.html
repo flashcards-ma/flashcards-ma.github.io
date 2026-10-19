@@ -256,6 +256,34 @@
     </div>
 
     <script>
+      // --- Liens ambassadeurs ---
+      // Un ambassadeur partage UN seul lien : https://flashcards-ma.github.io/?ref=CODEMAITRE
+      // (le CODEMAITRE est son code FMPR). La page réécrit alors les 7 liens
+      // facultés avec ses propres codes, et ses filleuls sont comptés sur son compte.
+      var AMBASSADORS = {
+        // "CODEMAITRE": { name: "Nom", fmpr: "…", fmpa: "…", fmpt: "…", fmpc: "…", fmpf: "…", fmpm: "…", fmpo: "…" }
+      };
+      (function () {
+        var ref = '';
+        try { ref = (new URLSearchParams(location.search).get('ref') || '').toUpperCase(); } catch (e) {}
+        var amb = AMBASSADORS[ref];
+        if (!amb) return;
+        var urls = {
+          fmpr: 'https://fmpr-flashcards.github.io/',
+          fmpa: 'https://fmpa-flashcards.github.io/',
+          fmpt: 'https://fmpt-flashcards.github.io/',
+          fmpc: 'https://fmpc-flashcards.github.io/',
+          fmpo: 'https://fmpo-flashcards.github.io/',
+          fmpf: 'https://fmpf-flashcards.github.io/',
+          fmpm: 'https://fmpm-flashcards.github.io/'
+        };
+        Array.prototype.forEach.call(document.querySelectorAll('.card'), function (card) {
+          var key = (card.getAttribute('data-name') || '').split(' ')[0];
+          if (amb[key] && urls[key]) card.href = urls[key] + '?ref=' + amb[key];
+        });
+      })();
+    </script>
+    <script>
       (function () {
         var input = document.getElementById('search');
         var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));

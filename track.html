@@ -31,7 +31,9 @@
   <p class="sub">Inscriptions et ventes Pro venues du lien <b>flashcards-ma.github.io</b> (?ref=), par faculté.</p>
 
   <div class="card" id="loginCard">
-    <label for="pw">Mot de passe du compte <b>hub@flashcards.ma</b></label>
+    <label for="email">Compte (ton email ou celui d'un ambassadeur)</label>
+    <input type="email" id="email" value="hub@flashcards.ma" autocomplete="username" style="width:100%;padding:12px;font-size:1rem;border:1.5px solid #d7dee9;border-radius:10px;margin-bottom:12px;">
+    <label for="pw">Mot de passe</label>
     <input type="password" id="pw" placeholder="••••••••" autocomplete="current-password">
     <button id="go">Voir les stats</button>
     <div class="err hidden" id="loginErr"></div>
@@ -44,7 +46,7 @@
     </table>
     <div class="ok hidden" id="updated"></div>
     <div class="err hidden" id="statsErr"></div>
-    <p class="note">Inscrits = comptes créés via le lien hub. Pro = parmi eux, ceux qui ont activé un abonnement (15 DH chacun, visibles aussi dans « Parrainages à payer » de chaque admin — la ligne hub@flashcards.ma est ton tracker, ne la paie pas).</p>
+    <p class="note">Inscrits = comptes créés via ton lien. Pro = parmi eux, ceux qui ont activé un abonnement (15 DH chacun, visibles aussi dans « Parrainages à payer » de chaque admin).</p>
   </div>
 
 <script type="importmap">
@@ -68,12 +70,12 @@ const PROJECTS = [
   { label: 'FMPF · Fès',        projectId: 'fmpf-flashcards',     apiKey: 'AIzaSyAOFlzGPTiWnkYeY8-sr7kMTWF7NZe-ao0', authDomain: 'fmpf-flashcards.firebaseapp.com' },
   { label: 'FMPM · Marrakech',  projectId: 'fmpm-flashcards',     apiKey: 'AIzaSyAXmdC45pDJrXzrtWvvpDZnHEej-RG0KWg', authDomain: 'fmpm-flashcards.firebaseapp.com' },
 ];
-const EMAIL = 'hub@flashcards.ma';
 
 const $ = (id) => document.getElementById(id);
 $('go').addEventListener('click', async () => {
   const pw = $('pw').value;
-  if (!pw) return;
+  const email = ($('email').value || '').trim();
+  if (!pw || !email) return;
   $('go').disabled = true;
   $('loginErr').classList.add('hidden');
   $('statsErr').classList.add('hidden');
@@ -83,7 +85,7 @@ $('go').addEventListener('click', async () => {
     for (const p of PROJECTS) {
       const app = initializeApp({ apiKey: p.apiKey, authDomain: p.authDomain, projectId: p.projectId }, p.projectId);
       const auth = getAuth(app);
-      const cred = await signInWithEmailAndPassword(auth, EMAIL, pw);
+      const cred = await signInWithEmailAndPassword(auth, email, pw);
       const uid = cred.user.uid;
       const db = getFirestore(app);
       const hubDoc = await getDoc(doc(db, 'users', uid));
