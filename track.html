@@ -27,16 +27,25 @@
 </style>
 </head>
 <body>
-  <h1>📊 Hub Tracker</h1>
-  <p class="sub">Inscriptions et ventes Pro venues du lien <b>flashcards-ma.github.io</b> (?ref=), par faculté.</p>
+  <h1 id="title">📊 Hub Tracker</h1>
+  <p class="sub" id="subtitle">Inscriptions et ventes Pro venues du lien <b>flashcards-ma.github.io</b> (?ref=), par faculté.</p>
 
   <div class="card" id="loginCard">
-    <label for="email">Compte (ton email ou celui d'un ambassadeur)</label>
+    <label for="email">Email du compte</label>
     <input type="email" id="email" value="hub@flashcards.ma" autocomplete="username" style="width:100%;padding:12px;font-size:1rem;border:1.5px solid #d7dee9;border-radius:10px;margin-bottom:12px;">
     <label for="pw">Mot de passe</label>
     <input type="password" id="pw" placeholder="••••••••" autocomplete="current-password">
-    <button id="go">Voir les stats</button>
+    <button id="go">Voir mes stats</button>
     <div class="err hidden" id="loginErr"></div>
+    <p class="note"><a href="#" id="forgot" style="color:var(--teal);">Mot de passe oublié ?</a></p>
+  </div>
+
+  <div class="card hidden" id="linkCard">
+    <label>Ton lien unique à partager</label>
+    <div class="linkbox" id="ambLink" style="background:var(--cream);border:1.5px dashed var(--teal);border-radius:10px;padding:14px;margin:8px 0 12px;word-break:break-all;"></div>
+    <button id="copyLink">Copier le lien</button>
+    <div class="err hidden" id="regWarn" style="margin-top:10px;"></div>
+    <p class="note">Partage ce lien : le visiteur choisit sa faculté sur la page hub, et son inscription + son passage Pro sont comptés pour toi, toutes facultés confondues.</p>
   </div>
 
   <div class="card hidden" id="statsCard">
@@ -59,7 +68,7 @@
 </script>
 <script type="module">
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth';
 import { getFirestore, doc, getDoc, collection, query, where, getCountFromServer } from 'firebase/firestore';
 
 const PROJECTS = [
@@ -83,14 +92,19 @@ $('go').addEventListener('click', async () => {
   try {
     const rows = [];
     let tReg = 0, tPro = 0;
+    let masterCode = null, displayName = null;
     for (const p of PROJECTS) {
       const app = initializeApp({ apiKey: p.apiKey, authDomain: p.authDomain, projectId: p.projectId }, p.projectId);
       const auth = getAuth(app);
       const cred = await signInWithEmailAndPassword(auth, email, pw);
       const uid = cred.user.uid;
       const db = getFirestore(app);
-      const hubDoc = await getDoc(doc(db, 'users', uid));
-      const pro = hubDoc.exists() ? (hubDoc.data().refCount || 0) : 0;
+      const userDoc = await getDoc(doc(db, 'users', uid));
+      const pro = userDoc.exists() ? (userDoc.data().refCount || 0) : 0;
+      if (p.projectId === 'fmpr-flashcards' && userDoc.exists()) {
+        masterCode = userDoc.data().referralCode || null;
+        displayName = userDoc.data().displayName || null;
+      }
       let reg = 0;
       try {
         const q = query(collection(db, 'referrals'), where('referrerUid', '==', uid));
@@ -99,6 +113,26 @@ $('go').addEventListener('click', async () => {
       rows.push({ label: p.label, reg, pro });
       if (reg > 0) tReg += reg;
       tPro += pro;
+    }
+    const isHub = email.toLowerCase() === 'hub@flashcards.ma';
+    $('title').textContent = isHub ? '📊 Hub Tracker' : '🤝 Espace Ambassadeur';
+    $('subtitle').innerHTML = isHub
+      ? 'Inscriptions et ventes Pro venues du lien <b>flashcards-ma.github.io</b> (?ref=), par faculté.'
+      : 'Ton lien, tes inscrits et tes ventes Pro, par faculté.' + (displayName ? ' — <b>' + displayName.replace(/</g, '&lt;') + '</b>' : '');
+    if (masterCode) {
+      $('ambLink').textContent = 'https://flashcards-ma.github.io/?ref=' + masterCode;
+      $('linkCard').classList.remove('hidden');
+      // Vérifie que le lien est bien enregistré (sinon il ne trackera pas)
+      if (!isHub) {
+        fetch('https://firestore.googleapis.com/v1/projects/fmpr-flashcards/databases/(default)/documents/ambassadors/' + encodeURIComponent(masterCode))
+          .then(function (r) {
+            if (!r.ok) {
+              const w = $('regWarn');
+              w.textContent = '⚠️ Ce lien n’est pas encore activé côté hub — préviens Zakaria avant de le partager.';
+              w.classList.remove('hidden');
+            }
+          }).catch(function () {});
+      }
     }
     $('rows').innerHTML = rows.map(r =>
       `<tr><td>${r.label}</td><td class="num">${r.reg < 0 ? '—' : r.reg}</td><td class="num">${r.pro}</td>` +
@@ -110,11 +144,26 @@ $('go').addEventListener('click', async () => {
     $('updated').classList.remove('hidden');
   } catch (e) {
     const el = $('loginErr');
-    el.textContent = 'Échec de connexion : ' + (e.code === 'auth/invalid-credential' ? 'mot de passe incorrect.' : e.message);
+    el.textContent = 'Échec de connexion : ' + (e.code === 'auth/invalid-credential' ? 'email ou mot de passe incorrect.' : e.message);
     el.classList.remove('hidden');
   } finally {
     $('go').disabled = false;
   }
+});
+$('copyLink').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText($('ambLink').textContent); $('copyLink').textContent = 'Copié ✓'; }
+  catch (e) { $('copyLink').textContent = 'Sélectionne le lien manuellement'; }
+  setTimeout(() => { $('copyLink').textContent = 'Copier le lien'; }, 2000);
+});
+$('forgot').addEventListener('click', async (e) => {
+  e.preventDefault();
+  const email = ($('email').value || '').trim();
+  if (!email) { alert('Entre ton email d’abord.'); return; }
+  try {
+    const app = initializeApp({ apiKey: PROJECTS[0].apiKey, authDomain: PROJECTS[0].authDomain, projectId: PROJECTS[0].projectId }, 'forgot-pw');
+    await sendPasswordResetEmail(getAuth(app), email);
+    alert('Email de réinitialisation envoyé à ' + email);
+  } catch (err) { alert('Erreur : ' + err.message); }
 });
 $('pw').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('go').click(); });
 </script>
