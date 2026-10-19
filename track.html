@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hub Tracker — Flashcards.ma</title>
+<style>
+  :root { --navy:#14284B; --teal:#1F7A6D; --gold:#C9A227; --cream:#F7F5EF; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; background:var(--cream); color:var(--navy); padding:20px; max-width:720px; margin:0 auto; }
+  h1 { font-size:1.4rem; margin:8px 0 4px; }
+  p.sub { color:#5a6b85; margin-bottom:16px; font-size:.95rem; }
+  .card { background:#fff; border-radius:14px; padding:18px; box-shadow:0 2px 10px rgba(20,40,75,.08); margin-bottom:14px; }
+  label { display:block; font-size:.85rem; margin-bottom:6px; color:#5a6b85; }
+  input[type=password] { width:100%; padding:12px; font-size:1rem; border:1.5px solid #d7dee9; border-radius:10px; margin-bottom:12px; }
+  button { width:100%; padding:13px; font-size:1rem; font-weight:700; color:#fff; background:var(--teal); border:none; border-radius:10px; cursor:pointer; }
+  button:disabled { opacity:.6; cursor:wait; }
+  table { width:100%; border-collapse:collapse; margin-top:6px; }
+  th, td { text-align:left; padding:10px 8px; border-bottom:1px solid #eef1f6; font-size:.95rem; }
+  th { color:#5a6b85; font-weight:600; font-size:.82rem; text-transform:uppercase; }
+  td.num, th.num { text-align:right; font-variant-numeric:tabular-nums; }
+  tr.total td { font-weight:800; border-bottom:none; border-top:2px solid var(--navy); }
+  .err { color:#b3261e; font-size:.9rem; margin-top:8px; }
+  .ok { color:var(--teal); font-size:.9rem; margin-top:8px; }
+  .note { font-size:.82rem; color:#8a97ad; margin-top:10px; }
+  .hidden { display:none; }
+</style>
+</head>
+<body>
+  <h1>📊 Hub Tracker</h1>
+  <p class="sub">Inscriptions et ventes Pro venues du lien <b>flashcards-ma.github.io</b> (?ref=), par faculté.</p>
+
+  <div class="card" id="loginCard">
+    <label for="pw">Mot de passe du compte <b>hub@flashcards.ma</b></label>
+    <input type="password" id="pw" placeholder="••••••••" autocomplete="current-password">
+    <button id="go">Voir les stats</button>
+    <div class="err hidden" id="loginErr"></div>
+  </div>
+
+  <div class="card hidden" id="statsCard">
+    <table>
+      <thead><tr><th>Faculté</th><th class="num">Inscrits</th><th class="num">Pro</th><th class="num">Conv.</th></tr></thead>
+      <tbody id="rows"></tbody>
+    </table>
+    <div class="ok hidden" id="updated"></div>
+    <div class="err hidden" id="statsErr"></div>
+    <p class="note">Inscrits = comptes créés via le lien hub. Pro = parmi eux, ceux qui ont activé un abonnement (15 DH chacun, visibles aussi dans « Parrainages à payer » de chaque admin — la ligne hub@flashcards.ma est ton tracker, ne la paie pas).</p>
+  </div>
+
+<script type="importmap">
+{ "imports": {
+  "firebase/app": "https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js",
+  "firebase/auth": "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js",
+  "firebase/firestore": "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js"
+} }
+</script>
+<script type="module">
+import { initializeApp } from 'firebase/app';
+import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getFirestore, doc, getDoc, collection, query, where, getCountFromServer } from 'firebase/firestore';
+
+const PROJECTS = [
+  { label: 'FMPR · Rabat',     projectId: 'fmpr-flashcards',     apiKey: 'AIzaSyA5nEYGxXgALKBDFAnvQFDCyaAcNcL9quA', authDomain: 'fmpr-flashcards.firebaseapp.com' },
+  { label: 'FMPA · Agadir',    projectId: 'fmpa-flashcards',     apiKey: 'AIzaSyDex6lZqD5GTG8Kod_GHEavF7xKsgjFrdY', authDomain: 'fmpa-flashcards.firebaseapp.com' },
+  { label: 'FMPT · Tanger',    projectId: 'fmpt-flashcards',     apiKey: 'AIzaSyCqiN5-OzoM6w_1iXXYkfvIGL-JuVaMCL8', authDomain: 'fmpt-flashcards.firebaseapp.com' },
+  { label: 'FMPC · Casa',       projectId: 'fmpc-flashcards-app', apiKey: 'AIzaSyC0qaxGjyMSolZ1h17m5w3OJ2GMldPISK0', authDomain: 'fmpc-flashcards-app.firebaseapp.com' },
+  { label: 'FMPO · Oujda',      projectId: 'fmpo-flashcards',     apiKey: 'AIzaSyCBzr9P924fcjlSeNTcj4aLR9wIAX9szjA', authDomain: 'fmpo-flashcards.firebaseapp.com' },
+  { label: 'FMPF · Fès',        projectId: 'fmpf-flashcards',     apiKey: 'AIzaSyAOFlzGPTiWnkYeY8-sr7kMTWF7NZe-ao0', authDomain: 'fmpf-flashcards.firebaseapp.com' },
+  { label: 'FMPM · Marrakech',  projectId: 'fmpm-flashcards',     apiKey: 'AIzaSyAXmdC45pDJrXzrtWvvpDZnHEej-RG0KWg', authDomain: 'fmpm-flashcards.firebaseapp.com' },
+];
+const EMAIL = 'hub@flashcards.ma';
+
+const $ = (id) => document.getElementById(id);
+$('go').addEventListener('click', async () => {
+  const pw = $('pw').value;
+  if (!pw) return;
+  $('go').disabled = true;
+  $('loginErr').classList.add('hidden');
+  $('statsErr').classList.add('hidden');
+  try {
+    const rows = [];
+    let tReg = 0, tPro = 0;
+    for (const p of PROJECTS) {
+      const app = initializeApp({ apiKey: p.apiKey, authDomain: p.authDomain, projectId: p.projectId }, p.projectId);
+      const auth = getAuth(app);
+      const cred = await signInWithEmailAndPassword(auth, EMAIL, pw);
+      const uid = cred.user.uid;
+      const db = getFirestore(app);
+      const hubDoc = await getDoc(doc(db, 'users', uid));
+      const pro = hubDoc.exists() ? (hubDoc.data().refCount || 0) : 0;
+      let reg = 0;
+      try {
+        const q = query(collection(db, 'referrals'), where('referrerUid', '==', uid));
+        reg = (await getCountFromServer(q)).data().count;
+      } catch (e) { reg = -1; }
+      rows.push({ label: p.label, reg, pro });
+      if (reg > 0) tReg += reg;
+      tPro += pro;
+    }
+    $('rows').innerHTML = rows.map(r =>
+      `<tr><td>${r.label}</td><td class="num">${r.reg < 0 ? '—' : r.reg}</td><td class="num">${r.pro}</td>` +
+      `<td class="num">${r.reg > 0 ? Math.round(100 * r.pro / r.reg) + ' %' : '—'}</td></tr>`
+    ).join('') + `<tr class="total"><td>Total</td><td class="num">${tReg}</td><td class="num">${tPro}</td><td class="num">${tReg > 0 ? Math.round(100 * tPro / tReg) + ' %' : '—'}</td></tr>`;
+    $('loginCard').classList.add('hidden');
+    $('statsCard').classList.remove('hidden');
+    $('updated').textContent = 'Mis à jour : ' + new Date().toLocaleString('fr-FR');
+    $('updated').classList.remove('hidden');
+  } catch (e) {
+    const el = $('loginErr');
+    el.textContent = 'Échec de connexion : ' + (e.code === 'auth/invalid-credential' ? 'mot de passe incorrect.' : e.message);
+    el.classList.remove('hidden');
+  } finally {
+    $('go').disabled = false;
+  }
+});
+$('pw').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('go').click(); });
+</script>
+</body>
+</html>
