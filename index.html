@@ -258,16 +258,13 @@
     <script>
       // --- Liens ambassadeurs ---
       // Un ambassadeur partage UN seul lien : https://flashcards-ma.github.io/?ref=CODEMAITRE
-      // (le CODEMAITRE est son code FMPR). La page réécrit alors les 7 liens
-      // facultés avec ses propres codes, et ses filleuls sont comptés sur son compte.
-      var AMBASSADORS = {
-        // "CODEMAITRE": { name: "Nom", fmpr: "…", fmpa: "…", fmpt: "…", fmpc: "…", fmpf: "…", fmpm: "…", fmpo: "…" }
-      };
+      // Le registre "ambassadors" (Firestore, projet FMPR, lecture publique) donne
+      // ses codes par faculte ; la page reecrit alors les 7 liens. Sans ?ref=
+      // valide, les liens hub par defaut sont conserves.
       (function () {
         var ref = '';
         try { ref = (new URLSearchParams(location.search).get('ref') || '').toUpperCase(); } catch (e) {}
-        var amb = AMBASSADORS[ref];
-        if (!amb) return;
+        if (!ref || !/^[A-Z0-9]{4,10}$/.test(ref)) return;
         var urls = {
           fmpr: 'https://fmpr-flashcards.github.io/',
           fmpa: 'https://fmpa-flashcards.github.io/',
@@ -277,10 +274,26 @@
           fmpf: 'https://fmpf-flashcards.github.io/',
           fmpm: 'https://fmpm-flashcards.github.io/'
         };
-        Array.prototype.forEach.call(document.querySelectorAll('.card'), function (card) {
-          var key = (card.getAttribute('data-name') || '').split(' ')[0];
-          if (amb[key] && urls[key]) card.href = urls[key] + '?ref=' + amb[key];
-        });
+        var done = false;
+        function rewrite(codes) {
+          if (done) return; done = true;
+          if (!codes) return;
+          Array.prototype.forEach.call(document.querySelectorAll('.card'), function (card) {
+            var key = (card.getAttribute('data-name') || '').split(' ')[0];
+            if (codes[key] && urls[key]) card.href = urls[key] + '?ref=' + codes[key];
+          });
+        }
+        setTimeout(function () { rewrite(null); }, 4000);
+        fetch('https://firestore.googleapis.com/v1/projects/fmpr-flashcards/databases/(default)/documents/ambassadors/' + encodeURIComponent(ref))
+          .then(function (r) { return r.ok ? r.json() : null; })
+          .then(function (d) {
+            if (!d || !d.fields || !d.fields.codes || !d.fields.codes.mapValue) return rewrite(null);
+            var f = d.fields.codes.mapValue.fields || {};
+            var codes = {};
+            Object.keys(f).forEach(function (k) { if (f[k] && f[k].stringValue) codes[k] = f[k].stringValue; });
+            rewrite(codes);
+          })
+          .catch(function () { rewrite(null); });
       })();
     </script>
     <script>
