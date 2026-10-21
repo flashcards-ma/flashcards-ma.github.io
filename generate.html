@@ -189,7 +189,7 @@ $('go').addEventListener('click', async () => {
       name, email, codes, createdAt: serverTimestamp(),
     });
     step('✅ Registre ambassadeur', 'done');
-    const link = 'https://flashcards-ma.github.io/?ref=' + master;
+    const link = 'https://flashcartes.com/?ref=' + master;
     $('link').textContent = link;
     $('resultNote').textContent = 'Stats : page Hub Tracker → connecte-toi avec ' + email + ' (ou donne ces identifiants à l\u2019ambassadeur). Chaque Pro via son lien lui crédite 15 DH.';
     $('resultCard').classList.remove('hidden');

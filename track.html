@@ -28,7 +28,7 @@
 </head>
 <body>
   <h1 id="title">📊 Hub Tracker</h1>
-  <p class="sub" id="subtitle">Inscriptions et ventes Pro venues du lien <b>flashcards-ma.github.io</b> (?ref=), par faculté.</p>
+  <p class="sub" id="subtitle">Inscriptions et ventes Pro venues du lien <b>flashcartes.com</b> (?ref=), par faculté.</p>
 
   <div class="card" id="loginCard">
     <label for="email">Email du compte</label>
@@ -117,10 +117,10 @@ $('go').addEventListener('click', async () => {
     const isHub = email.toLowerCase() === 'hub@flashcards.ma';
     $('title').textContent = isHub ? '📊 Hub Tracker' : '🤝 Espace Ambassadeur';
     $('subtitle').innerHTML = isHub
-      ? 'Inscriptions et ventes Pro venues du lien <b>flashcards-ma.github.io</b> (?ref=), par faculté.'
+      ? 'Inscriptions et ventes Pro venues du lien <b>flashcartes.com</b> (?ref=), par faculté.'
       : 'Ton lien, tes inscrits et tes ventes Pro, par faculté.' + (displayName ? ' — <b>' + displayName.replace(/</g, '&lt;') + '</b>' : '');
     if (masterCode) {
-      $('ambLink').textContent = 'https://flashcards-ma.github.io/?ref=' + masterCode;
+      $('ambLink').textContent = 'https://flashcartes.com/?ref=' + masterCode;
       $('linkCard').classList.remove('hidden');
       // Vérifie que le lien est bien enregistré (sinon il ne trackera pas)
       if (!isHub) {
