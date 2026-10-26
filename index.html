@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="color-scheme" content="light dark" />
     <meta name="description" content="Flashcards de médecine par faculté au Maroc — 87 207 cartes, 3 242 sujets, 7 facultés. 100 DH à vie." />
-    <link rel="icon" href="data:," />
+    <link rel="icon" href="icon-512.png" />
+    <link rel="apple-touch-icon" href="icon-192.png" />
     <title>Prépa Résidanat &amp; Internat — Flashcards.ma</title>
     <style>
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,500;0,6..72,600;1,6..72,500&display=swap');
@@ -49,9 +50,9 @@ img{max-width:100%;}
   background:color-mix(in srgb, var(--bg) 82%, transparent);
   backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);}
-.brand-mark{flex:none;width:38px;height:38px;border-radius:11px;background:var(--navy);color:#fff;
-  display:flex;align-items:center;justify-content:center;
-  font-family:Newsreader,Georgia,serif;font-weight:600;font-size:22px;}
+.brand-mark{flex:none;width:38px;height:38px;border-radius:11px;background:#fff;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 1px 4px rgba(14,42,68,.18);}
+.brand-mark img{width:100%;height:100%;object-fit:contain;display:block;}
 .brand-name{font-weight:800;font-size:17px;line-height:1.1;}
 .brand-sub{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);}
 .topnav{display:flex;gap:4px;margin:0 auto;padding:4px;border-radius:999px;
@@ -191,7 +192,7 @@ footer .flinks{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;}
   <body>
     <div class="topbar">
       <a class="brand" href="#top">
-        <span class="brand-mark">F</span>
+        <span class="brand-mark"><img src="icon-512.png" alt="Flashcards" width="38" height="38"></span>
         <span><span class="brand-name">Flashcartes</span><br><span class="brand-sub">Flashcards.ma</span></span>
       </a>
       <nav class="topnav" aria-label="Navigation">
