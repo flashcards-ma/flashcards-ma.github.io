@@ -279,56 +279,81 @@ footer .flinks{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;}
       })();
       </script>
 
+      <style>
+        #annales .cities { display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+        #annales .cities button { background:#F1F4F5; border:0; border-radius:999px; padding:8px 14px; font-size:13.5px; font-weight:700; color:#0E7C86; cursor:pointer; font-family:inherit; }
+        #annales .cities button.active { background:#0E7C86; color:#fff; }
+        #annales .yearrow { display:flex; align-items:center; gap:10px; margin-top:14px; }
+        #annales .yearrow label { font-size:14px; font-weight:800; color:#0f2237; }
+        #annales .yearrow select { font-family:inherit; font-size:14px; font-weight:700; color:#14284B; background:#fff; border:1px solid #D5DEE3; border-radius:12px; padding:9px 12px; }
+        #annales .sess { display:block; text-decoration:none; color:#0e7c7b; font-weight:700; font-size:14px; padding:10px 0 0; }
+        #annales .sess span { color:#7B8A99; font-weight:600; font-size:12.5px; }
+        #annales .sess .note { display:block; color:#8A6D1B; font-weight:600; font-size:12.5px; }
+        #annales .citylink { display:inline-block; margin-top:12px; font-size:13px; font-weight:700; color:#0e7c7b; text-decoration:none; }
+        #annales .empty { font-size:14px; color:#43566B; margin-top:12px; line-height:1.55; }
+      </style>
       <section id="annales" style="max-width:1100px;margin:26px auto 6px;padding:0 16px">
         <div style="background:#fff;border-radius:20px;padding:20px 22px;box-shadow:0 14px 30px rgba(14,42,68,.08)">
           <p style="font-size:11px;font-weight:800;letter-spacing:1.2px;color:#0e7c7b">ANNALES</p>
           <h2 style="margin:6px 0 0;font-size:1.5rem;color:#14284B">Sessions précédentes — par faculté</h2>
           <p style="font-size:14px;color:#43566B;margin:8px 0 0;line-height:1.55">Les sujets des sessions précédentes, par matière. Tout est ici, sur Flashcartes.com.</p>
-          <div style="padding:14px 0 4px;margin-top:8px">
-            <div style="font-weight:800;font-size:15px;color:#0f2237">Rabat <span style="font-size:12px;font-weight:600;color:#7B8A99">FMPR · 38 sessions · 2007–2026</span></div>
-            <a href="annales.html#fmpr-residanat-2026-06" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Résidanat — Juin 2026 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 20 questions</span></a>
-            <a href="annales.html#fmpr-internat-2026-06" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Internat — Juin 2026 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 20 questions</span></a>
-            <a href="annales.html#FMPR" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#0e7c7b;text-decoration:none">Voir les annales de Rabat →</a>
-          </div>
-          <div style="border-top:1px solid #EDF1F4;padding:14px 0 4px;margin-top:14px">
-            <div style="font-weight:800;font-size:15px;color:#0f2237">Casablanca <span style="font-size:12px;font-weight:600;color:#7B8A99">FMPC · 3 sessions · 2024–2026</span></div>
-            <a href="annales.html#fmpc-residanat-2024-01" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Résidanat — Janvier 2024 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 19 questions</span></a>
-            <a href="annales.html#FMPC" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#0e7c7b;text-decoration:none">Voir les annales de Casablanca →</a>
-          </div>
-          <div style="border-top:1px solid #EDF1F4;padding:14px 0 4px;margin-top:14px">
-            <div style="font-weight:800;font-size:15px;color:#0f2237">Fès <span style="font-size:12px;font-weight:600;color:#7B8A99">FMPF · 20 sessions · 2011–2026</span></div>
-            <a href="annales.html#fmpf-residanat-2026-06" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Résidanat — Juin 2026 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 13 questions</span></a>
-            <a href="annales.html#fmpf-internat-2026-06" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Internat — Juin 2026 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 4 questions · biologie uniquement</span></a>
-            <a href="annales.html#FMPF" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#0e7c7b;text-decoration:none">Voir les annales de Fès →</a>
-          </div>
-          <div style="border-top:1px solid #EDF1F4;padding:14px 0 4px;margin-top:14px">
-            <div style="font-weight:800;font-size:15px;color:#0f2237">Marrakech <span style="font-size:12px;font-weight:600;color:#7B8A99">FMPM · 22 sessions · 2011–2026</span></div>
-            <a href="annales.html#fmpm-residanat-2026-06" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Résidanat — Juin 2026 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 20 questions</span></a>
-            <a href="annales.html#fmpm-internat-2026-06" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Internat — Juin 2026 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 20 questions</span></a>
-            <a href="annales.html#FMPM" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#0e7c7b;text-decoration:none">Voir les annales de Marrakech →</a>
-          </div>
-          <div style="border-top:1px solid #EDF1F4;padding:14px 0 4px;margin-top:14px">
-            <div style="font-weight:800;font-size:15px;color:#0f2237">Agadir <span style="font-size:12px;font-weight:600;color:#7B8A99">FMPA · 15 sessions · 2020–2026</span></div>
-            <a href="annales.html#fmpa-residanat-2026-06" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Résidanat — Juin 2026 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 20 questions</span></a>
-            <a href="annales.html#fmpa-internat-2024-01" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Internat — Janvier 2024 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 20 questions</span></a>
-            <a href="annales.html#FMPA" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#0e7c7b;text-decoration:none">Voir les annales d'Agadir →</a>
-          </div>
-          <div style="border-top:1px solid #EDF1F4;padding:14px 0 4px;margin-top:14px">
-            <div style="font-weight:800;font-size:15px;color:#0f2237">Oujda <span style="font-size:12px;font-weight:600;color:#7B8A99">FMPO · 25 sessions · 2012–2026</span></div>
-            <a href="annales.html#fmpo-residanat-2022-12" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Résidanat — Décembre 2022 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 20 questions</span></a>
-            <a href="annales.html#fmpo-internat-2025-06" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Internat — Juin 2025 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 20 questions</span></a>
-            <a href="annales.html#FMPO" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#0e7c7b;text-decoration:none">Voir les annales d'Oujda →</a>
-          </div>
-          <div style="border-top:1px solid #EDF1F4;padding:14px 0 4px;margin-top:14px">
-            <div style="font-weight:800;font-size:15px;color:#0f2237">Tanger <span style="font-size:12px;font-weight:600;color:#7B8A99">FMPT · 3 sessions · 2025–2026</span></div>
-            <a href="annales.html#fmpt-residanat-2025-04" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Résidanat — Avril 2025 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 20 questions</span></a>
-            <a href="annales.html#fmpt-internat-2026-06" style="display:block;text-decoration:none;color:#0e7c7b;font-weight:700;font-size:14px;padding:8px 0 0">Internat — Juin 2026 <span style="color:#7B8A99;font-weight:600;font-size:12.5px">· 8 questions · anatomie + biologie</span></a>
-            <a href="annales.html#FMPT" style="display:inline-block;margin-top:10px;font-size:13px;font-weight:700;color:#0e7c7b;text-decoration:none">Voir les annales de Tanger →</a>
-          </div>
+          <div class="cities" id="annales-cities"></div>
+          <div class="yearrow"><label for="annales-year">Année</label><select id="annales-year"></select></div>
+          <div id="annales-list"></div>
           <a href="annales.html" style="display:inline-block;margin-top:18px;font-size:14px;font-weight:800;color:#0e7c7b;text-decoration:none">Voir toutes les annales →</a>
           <p style="font-size:12.5px;color:#7B8A99;line-height:1.55;margin:14px 0 0">224 questions · 13 sessions · 7 facultés. Seules les sessions vérifiées avec des questions sont publiées. Aucun corrigé n'est fourni ici.</p>
         </div>
       </section>
+      <script id="annales-summary" type="application/json">{"cities":[{"city":"Rabat","code":"FMPR","sessions":[{"id":"fmpr-residanat-2026-06","type":"Résidanat","label":"Juin 2026","q":20},{"id":"fmpr-internat-2026-06","type":"Internat","label":"Juin 2026","q":20}]},{"city":"Casablanca","code":"FMPC","sessions":[{"id":"fmpc-residanat-2024-01","type":"Résidanat","label":"Janvier 2024","q":19}]},{"city":"Fès","code":"FMPF","sessions":[{"id":"fmpf-residanat-2026-06","type":"Résidanat","label":"Juin 2026","q":13},{"id":"fmpf-internat-2026-06","type":"Internat","label":"Juin 2026","q":4,"note":"Biologie uniquement pour l'instant"}]},{"city":"Marrakech","code":"FMPM","sessions":[{"id":"fmpm-residanat-2026-06","type":"Résidanat","label":"Juin 2026","q":20},{"id":"fmpm-internat-2026-06","type":"Internat","label":"Juin 2026","q":20}]},{"city":"Agadir","code":"FMPA","sessions":[{"id":"fmpa-residanat-2026-06","type":"Résidanat","label":"Juin 2026","q":20},{"id":"fmpa-internat-2024-01","type":"Internat","label":"Janvier 2024","q":20}]},{"city":"Oujda","code":"FMPO","sessions":[{"id":"fmpo-residanat-2022-12","type":"Résidanat","label":"Décembre 2022","q":20},{"id":"fmpo-internat-2025-06","type":"Internat","label":"Juin 2025","q":20}]},{"city":"Tanger","code":"FMPT","sessions":[{"id":"fmpt-residanat-2025-04","type":"Résidanat","label":"Avril 2025","q":20},{"id":"fmpt-internat-2026-06","type":"Internat","label":"Juin 2026","q":8,"note":"Anatomie + biologie uniquement pour l'instant"}]}]}</script>
+      <script>
+      (function () {
+        function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+        function sessionYear(s){ var m = s.id.match(/(\d{4})-/); return m ? m[1] : ''; }
+        var data = JSON.parse(document.getElementById('annales-summary').textContent);
+        var state = { city: data.cities[0].code, year: 'all' };
+        function yearsList(){
+          var set = {};
+          data.cities.forEach(function(c){ c.sessions.forEach(function(s){ set[sessionYear(s)] = 1; }); });
+          return Object.keys(set).sort().reverse();
+        }
+        function cityByCode(code){
+          for (var i = 0; i < data.cities.length; i++) if (data.cities[i].code === code) return data.cities[i];
+          return data.cities[0];
+        }
+        function render(){
+          var nav = '';
+          data.cities.forEach(function(c){
+            nav += '<button type="button" data-city="' + esc(c.code) + '"' + (c.code === state.city ? ' class="active"' : '') + '>' + esc(c.city) + '</button>';
+          });
+          document.getElementById('annales-cities').innerHTML = nav;
+          var city = cityByCode(state.city);
+          var sessions = city.sessions.filter(function(s){ return state.year === 'all' || sessionYear(s) === state.year; });
+          var html = '';
+          if (!sessions.length) {
+            html += '<p class="empty">Aucune session en ' + esc(state.year) + ' pour ' + esc(city.city) + ' pour l&rsquo;instant.</p>';
+          }
+          sessions.forEach(function(s){
+            html += '<a class="sess" href="annales.html#' + esc(s.id) + '">' + esc(s.type) + ' — ' + esc(s.label) + ' <span>· ' + s.q + ' questions</span>';
+            if (s.note) html += '<span class="note">' + esc(s.note) + '</span>';
+            html += '</a>';
+          });
+          if (sessions.length) html += '<a class="citylink" href="annales.html#' + esc(city.code) + '">Voir les annales de ' + esc(city.city) + ' →</a>';
+          document.getElementById('annales-list').innerHTML = html;
+        }
+        var sel = document.getElementById('annales-year');
+        var opts = '<option value="all">Toutes les années</option>';
+        yearsList().forEach(function(y){ opts += '<option value="' + y + '">' + y + '</option>'; });
+        sel.innerHTML = opts;
+        sel.addEventListener('change', function(){ state.year = sel.value; render(); });
+        document.getElementById('annales-cities').addEventListener('click', function(e){
+          var btn = e.target.closest('button[data-city]');
+          if (!btn) return;
+          state.city = btn.getAttribute('data-city');
+          render();
+        });
+        render();
+      })();
+      </script>
       <section id="atlas" style="max-width:1100px;margin:26px auto 6px;padding:0 16px">
         <div style="background:linear-gradient(135deg,#0e2a44,#0e7c7b);border-radius:20px;padding:18px;color:#fff;box-shadow:0 14px 30px rgba(14,42,68,.25)">
           <p style="margin:0 0 8px;font-size:.72rem;font-weight:800;letter-spacing:.14em;color:#f5c542">NOUVEAU — INCLUS POUR LES MEMBRES PRO</p>
