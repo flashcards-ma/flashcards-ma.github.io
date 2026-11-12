@@ -22,7 +22,7 @@
   .totals { font-size:14px; color:#43566B; margin-top:12px; }
   .totals b { color:#14284B; }
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:14px; margin-top:22px; }
-  .card { background:#fff; border-radius:18px; padding:18px; box-shadow:0 3px 12px rgba(20,40,75,.06); }
+  .card { background:#fff; border-radius:18px; padding:18px; box-shadow:0 3px 12px rgba(20,40,75,.06); scroll-margin-top:76px; }
   .card .row { display:flex; align-items:center; }
   .card .city { font-size:19px; font-weight:800; }
   .card .code { font-size:13px; color:#7B8A99; margin-left:8px; }
@@ -121,10 +121,17 @@
     });
     document.getElementById('grid').innerHTML = html;
   }
+  function jumpToHash(){
+    var h = location.hash && location.hash.slice(1);
+    if (!h) return;
+    var el = document.getElementById(h);
+    if (el) el.scrollIntoView();
+  }
   var data = JSON.parse(document.getElementById('residanat-data').textContent);
   render(data);
+  jumpToHash();
   fetch('residanat.json', { cache: 'no-store' }).then(function(r){ return r.json(); }).then(function(d){
-    if (d && d.updated && d.updated !== data.updated) render(d);
+    if (d && d.updated && d.updated !== data.updated) { render(d); jumpToHash(); }
   }).catch(function(){});
 })();
 </script>
