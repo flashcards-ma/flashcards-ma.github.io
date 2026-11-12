@@ -21,20 +21,29 @@
   .sub { font-size:14.5px; color:#43566B; margin-top:8px; line-height:1.55; max-width:760px; }
   .totals { font-size:14px; color:#43566B; margin-top:12px; }
   .totals b { color:#14284B; }
-  .cities { display:flex; flex-wrap:wrap; gap:8px; margin-top:16px; }
-  .cities a { background:#fff; border-radius:999px; padding:8px 14px; font-size:13.5px; font-weight:700; color:#0E7C86; text-decoration:none; box-shadow:0 2px 8px rgba(20,40,75,.06); }
-  .cityhead { font-size:21px; font-weight:800; margin:30px 0 12px; scroll-margin-top:76px; }
+  .controls { margin-top:16px; }
+  .cities { display:flex; flex-wrap:wrap; gap:8px; }
+  .cities button { background:#fff; border:0; border-radius:999px; padding:8px 14px; font-size:13.5px; font-weight:700; color:#0E7C86; box-shadow:0 2px 8px rgba(20,40,75,.06); cursor:pointer; font-family:inherit; }
+  .cities button.active { background:#0E7C86; color:#fff; }
+  .yearrow { display:flex; align-items:center; gap:10px; margin-top:14px; }
+  .yearrow label { font-size:14px; font-weight:800; color:#14284B; }
+  .yearrow select { font-family:inherit; font-size:14px; font-weight:700; color:#14284B; background:#fff; border:1px solid #D5DEE3; border-radius:12px; padding:9px 12px; }
+  .cityhead { font-size:21px; font-weight:800; margin:24px 0 12px; scroll-margin-top:76px; }
   .cityhead span { font-size:13px; font-weight:600; color:#7B8A99; margin-left:6px; }
   .card { background:#fff; border-radius:18px; padding:18px; box-shadow:0 3px 12px rgba(20,40,75,.06); scroll-margin-top:76px; margin-bottom:14px; }
   .card .row { display:flex; align-items:center; flex-wrap:wrap; gap:4px 8px; }
   .card .stype { font-size:17px; font-weight:800; }
   .card .slabel { font-size:14px; color:#7B8A99; font-weight:600; }
   .badge { margin-left:auto; font-size:11.5px; font-weight:800; padding:5px 9px; border-radius:999px; white-space:nowrap; background:#E3F2EF; color:#14685C; }
-  .mat h3 { font-size:14px; font-weight:800; margin:14px 0 4px; color:#14284B; }
-  .mat ol { margin-left:20px; }
-  .mat li { font-size:14px; color:#0f2237; line-height:1.55; margin:6px 0; }
-  .mat li .part { display:block; font-size:12.5px; color:#7B8A99; }
+  .matbtn { display:flex; align-items:center; width:100%; background:none; border:0; border-top:1px solid #EDF1F4; padding:13px 2px; font-family:inherit; font-size:14.5px; font-weight:800; color:#14284B; cursor:pointer; text-align:left; }
+  .matbtn .mcount { margin-left:auto; font-size:12.5px; font-weight:600; color:#7B8A99; white-space:nowrap; }
+  .matbtn .chev { margin-left:8px; font-size:18px; line-height:1; color:#0E7C86; transition:transform .15s; }
+  .matbtn.open .chev { transform:rotate(90deg); }
+  .matbody ol { margin:2px 0 10px 20px; }
+  .matbody li { font-size:14px; color:#0f2237; line-height:1.55; margin:6px 0; }
+  .matbody li .part { display:block; font-size:12.5px; color:#7B8A99; }
   .snote { font-size:13px; color:#8A6D1B; background:#FDF3D7; border-radius:10px; padding:8px 12px; margin-top:12px; line-height:1.5; }
+  .empty { background:#fff; border-radius:18px; padding:18px; box-shadow:0 3px 12px rgba(20,40,75,.06); font-size:14px; color:#43566B; line-height:1.55; }
   .foot { margin-top:22px; font-size:12.5px; color:#7B8A99; line-height:1.6; }
   @media (max-width:480px){ h1{font-size:23px;} }
 </style>
@@ -47,9 +56,12 @@
 <div class="wrap">
   <div class="k">ANNALES &middot; INTERNAT ET R&Eacute;SIDANAT</div>
   <h1>Sessions pr&eacute;c&eacute;dentes</h1>
-  <p class="sub">Les sujets des sessions pr&eacute;c&eacute;dentes, par facult&eacute; et par mati&egrave;re. Tout est ici, sur Flashcartes.com &mdash; rien ne sort du site.</p>
+  <p class="sub">Les sujets des sessions pr&eacute;c&eacute;dentes, par facult&eacute; et par mati&egrave;re. Choisis ta facult&eacute; et ton ann&eacute;e, puis touche une mati&egrave;re pour voir ses questions.</p>
   <p class="totals" id="totals"></p>
-  <div class="cities" id="cities"></div>
+  <div class="controls">
+    <div class="cities" id="cities"></div>
+    <div class="yearrow"><label for="yearSel">Ann&eacute;e</label><select id="yearSel"></select></div>
+  </div>
   <div id="content"></div>
   <p class="foot">Sujets des &eacute;preuves officielles des concours d'internat et de r&eacute;sidanat en m&eacute;decine. Seules les sessions v&eacute;rifi&eacute;es avec des questions sont publi&eacute;es. Aucun corrig&eacute; n'est fourni ici. V&eacute;rifi&eacute; le 12 novembre 2026.</p>
 </div>
@@ -58,46 +70,104 @@
 <script>
 (function () {
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
-  function render(d){
-    var tot = d.totalQuestions || 0;
+  function sessionYear(s){ var m = s.id.match(/(\d{4})-/); return m ? m[1] : ''; }
+  var data = JSON.parse(document.getElementById('annales-data').textContent);
+  var state = { city: data.cities[0].code, year: 'all', scrollTo: null };
+
+  function yearsList(){
+    var set = {};
+    data.cities.forEach(function(c){ c.sessions.forEach(function(s){ set[sessionYear(s)] = 1; }); });
+    return Object.keys(set).sort().reverse();
+  }
+  function cityByCode(code){
+    for (var i = 0; i < data.cities.length; i++) if (data.cities[i].code === code) return data.cities[i];
+    return data.cities[0];
+  }
+  function buildYearSelect(){
+    var sel = document.getElementById('yearSel');
+    var html = '<option value="all">Toutes les ann&eacute;es</option>';
+    yearsList().forEach(function(y){ html += '<option value="' + y + '">' + y + '</option>'; });
+    sel.innerHTML = html;
+    sel.value = state.year;
+    sel.addEventListener('change', function(){
+      state.year = sel.value;
+      render();
+    });
+  }
+  function render(){
+    var tot = data.totalQuestions || 0;
     var nSess = 0;
-    d.cities.forEach(function(c){ nSess += c.sessions.length; });
+    data.cities.forEach(function(c){ nSess += c.sessions.length; });
     document.getElementById('totals').innerHTML = '<b>' + tot + ' questions</b> &middot; <b>' + nSess + ' sessions</b> &middot; <b>7 facult&eacute;s</b>';
     var nav = '';
-    d.cities.forEach(function(c){ nav += '<a href="#' + esc(c.code) + '">' + esc(c.city) + '</a>'; });
+    data.cities.forEach(function(c){
+      nav += '<button type="button" data-city="' + esc(c.code) + '"' + (c.code === state.city ? ' class="active"' : '') + '>' + esc(c.city) + '</button>';
+    });
     document.getElementById('cities').innerHTML = nav;
-    var html = '';
-    d.cities.forEach(function(c){
-      html += '<h2 class="cityhead" id="' + esc(c.code) + '">' + esc(c.city) + '<span>' + esc(c.code) + '</span></h2>';
-      c.sessions.forEach(function(s){
-        html += '<article class="card" id="' + esc(s.id) + '">';
-        html += '<div class="row"><span class="stype">' + esc(s.type) + '</span><span class="slabel">' + esc(s.label) + '</span><span class="badge">' + s.questions + ' questions</span></div>';
-        s.matieres.forEach(function(m){
-          html += '<div class="mat"><h3>' + esc(m.name) + '</h3><ol>';
-          m.questions.forEach(function(q){
-            html += '<li>' + esc(q.q);
-            if (q.p) html += '<span class="part">Partie demand&eacute;e : ' + esc(q.p) + '</span>';
-            html += '</li>';
-          });
-          html += '</ol></div>';
+    var city = cityByCode(state.city);
+    var sessions = city.sessions.filter(function(s){ return state.year === 'all' || sessionYear(s) === state.year; });
+    var html = '<h2 class="cityhead" id="' + esc(city.code) + '">' + esc(city.city) + '<span>' + esc(city.code) + '</span></h2>';
+    if (!sessions.length) {
+      html += '<div class="empty">Aucune session en ' + esc(state.year) + ' pour ' + esc(city.city) + ' pour l&rsquo;instant.</div>';
+    }
+    sessions.forEach(function(s){
+      html += '<article class="card" id="' + esc(s.id) + '">';
+      html += '<div class="row"><span class="stype">' + esc(s.type) + '</span><span class="slabel">' + esc(s.label) + '</span><span class="badge">' + s.questions + ' questions</span></div>';
+      s.matieres.forEach(function(m, mi){
+        var mid = s.id + '-m' + mi;
+        html += '<div class="mat"><button type="button" class="matbtn" data-target="' + esc(mid) + '" aria-expanded="false"><span>' + esc(m.name) + '</span><span class="mcount">' + m.questions.length + ' questions</span><span class="chev">&rsaquo;</span></button>';
+        html += '<div class="matbody" id="' + esc(mid) + '" hidden><ol>';
+        m.questions.forEach(function(q){
+          html += '<li>' + esc(q.q);
+          if (q.p) html += '<span class="part">Partie demand&eacute;e : ' + esc(q.p) + '</span>';
+          html += '</li>';
         });
-        if (s.note) html += '<p class="snote">' + esc(s.note) + '</p>';
-        html += '</article>';
+        html += '</ol></div></div>';
       });
+      if (s.note) html += '<p class="snote">' + esc(s.note) + '</p>';
+      html += '</article>';
     });
     document.getElementById('content').innerHTML = html;
   }
-  function jumpToHash(){
+  function initFromHash(){
     var h = location.hash && location.hash.slice(1);
     if (!h) return;
-    var el = document.getElementById(h);
+    var found = null;
+    data.cities.forEach(function(c){ c.sessions.forEach(function(s){ if (s.id === h) found = { city: c.code, year: sessionYear(s) }; }); });
+    if (found) { state.city = found.city; state.year = found.year; state.scrollTo = h; return; }
+    var city = data.cities.filter(function(c){ return c.code === h; })[0];
+    if (city) { state.city = city.code; state.scrollTo = h; }
+  }
+  document.getElementById('cities').addEventListener('click', function(e){
+    var btn = e.target.closest('button[data-city]');
+    if (!btn) return;
+    state.city = btn.getAttribute('data-city');
+    if (history.replaceState) history.replaceState(null, '', '#' + state.city);
+    render();
+  });
+  document.getElementById('content').addEventListener('click', function(e){
+    var btn = e.target.closest('.matbtn');
+    if (!btn) return;
+    var body = document.getElementById(btn.getAttribute('data-target'));
+    if (!body) return;
+    var open = body.hidden;
+    body.hidden = !open;
+    btn.setAttribute('aria-expanded', String(open));
+    if (open) btn.classList.add('open'); else btn.classList.remove('open');
+  });
+  initFromHash();
+  buildYearSelect();
+  render();
+  if (state.scrollTo) {
+    var el = document.getElementById(state.scrollTo);
     if (el) el.scrollIntoView();
   }
-  var data = JSON.parse(document.getElementById('annales-data').textContent);
-  render(data);
-  jumpToHash();
   fetch('annales.json', { cache: 'no-store' }).then(function(r){ return r.json(); }).then(function(d){
-    if (d && d.updated && d.updated !== data.updated) { render(d); jumpToHash(); }
+    if (d && d.updated && d.updated !== data.updated) {
+      data = d;
+      buildYearSelect();
+      render();
+    }
   }).catch(function(){});
 })();
 </script>
