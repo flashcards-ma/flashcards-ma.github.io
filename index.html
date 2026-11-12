@@ -197,6 +197,7 @@ footer .flinks{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;}
       </a>
       <nav class="topnav" aria-label="Navigation">
         <a href="#facultes">Facultés</a>
+        <a href="residanat.html">Résidanat</a>
         <a href="#methode">Méthode</a>
         <a href="#tarifs">Tarifs</a>
         <a href="#faq">FAQ</a>
@@ -235,6 +236,48 @@ footer .flinks{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:8px;}
           <div class="demo-counts"><span id="demoScore">Maîtrisées : 0 · À revoir : 0</span><button id="demoNext" type="button">Nouvelle carte →</button></div>
         </div>
       </section>
+
+      <section id="residanat" style="max-width:1100px;margin:26px auto 6px;padding:0 16px">
+        <div style="background:#fff;border-radius:20px;padding:20px 22px;box-shadow:0 14px 30px rgba(14,42,68,.08)">
+          <p style="font-size:11px;font-weight:800;letter-spacing:1.2px;color:#0e7c7b">CONCOURS RÉSIDANAT</p>
+          <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:8px 16px;margin-top:6px">
+            <h2 style="margin:0;font-size:1.5rem;color:#14284B">Session 16 Novembre 2026</h2>
+            <span id="resid-totals" style="font-size:14px;color:#43566B"><b>313 postes</b> confirmés · <b>6 / 7</b> avis officiels · <b>3</b> jurys publiés</span>
+          </div>
+          <div id="resid-cities" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:10px;margin-top:16px">
+            <div style="border:1px solid #EDF1F4;border-radius:14px;padding:12px"><div style="font-weight:800;font-size:15px">Rabat</div><div style="font-size:22px;font-weight:800;margin-top:4px">10 <span style="font-size:12px;font-weight:600;color:#7B8A99">postes</span></div><span style="display:inline-block;font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px;margin-top:6px;background:#E3F2EF;color:#14685C">Jury publié</span></div>
+            <div style="border:1px solid #EDF1F4;border-radius:14px;padding:12px"><div style="font-weight:800;font-size:15px">Casablanca</div><div style="font-size:22px;font-weight:800;margin-top:4px">84 <span style="font-size:12px;font-weight:600;color:#7B8A99">postes</span></div><span style="display:inline-block;font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px;margin-top:6px;background:#F1F4F5;color:#7B8A99">Jury en attente</span></div>
+            <div style="border:1px solid #EDF1F4;border-radius:14px;padding:12px"><div style="font-weight:800;font-size:15px">Fès</div><div style="font-size:22px;font-weight:800;margin-top:4px">72 <span style="font-size:12px;font-weight:600;color:#7B8A99">postes</span></div><span style="display:inline-block;font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px;margin-top:6px;background:#E3F2EF;color:#14685C">Jury publié</span></div>
+            <div style="border:1px solid #EDF1F4;border-radius:14px;padding:12px"><div style="font-weight:800;font-size:15px">Marrakech</div><div style="font-size:22px;font-weight:800;margin-top:4px">53 <span style="font-size:12px;font-weight:600;color:#7B8A99">postes</span></div><span style="display:inline-block;font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px;margin-top:6px;background:#E3F2EF;color:#14685C">Jury publié</span></div>
+            <div style="border:1px solid #EDF1F4;border-radius:14px;padding:12px"><div style="font-weight:800;font-size:15px">Agadir</div><div style="font-size:22px;font-weight:800;margin-top:4px">50 <span style="font-size:12px;font-weight:600;color:#7B8A99">postes</span></div><span style="display:inline-block;font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px;margin-top:6px;background:#F1F4F5;color:#7B8A99">Jury en attente</span></div>
+            <div style="border:1px solid #EDF1F4;border-radius:14px;padding:12px"><div style="font-weight:800;font-size:15px">Oujda</div><div style="font-size:22px;font-weight:800;margin-top:4px">44 <span style="font-size:12px;font-weight:600;color:#7B8A99">postes</span></div><span style="display:inline-block;font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px;margin-top:6px;background:#F1F4F5;color:#7B8A99">Jury en attente</span></div>
+            <div style="border:1px solid #EDF1F4;border-radius:14px;padding:12px"><div style="font-weight:800;font-size:15px">Tanger</div><div style="font-size:22px;font-weight:800;margin-top:4px">— <span style="font-size:12px;font-weight:600;color:#7B8A99">postes</span></div><span style="display:inline-block;font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px;margin-top:6px;background:#F1F4F5;color:#7B8A99">Avis en attente</span></div>
+          </div>
+          <a href="residanat.html" style="display:inline-block;margin-top:16px;color:#0e7c7b;font-weight:700">Voir tous les avis et jurys →</a>
+        </div>
+      </section>
+      <script>
+      (function () {
+        fetch('residanat.json', { cache: 'no-store' }).then(function (r) { return r.json(); }).then(function (d) {
+          if (!d || d.updated === '2026-11-12') return;
+          var t = document.getElementById('resid-totals');
+          if (t) {
+            var a = d.cities.filter(function (c) { return c.avisUrl; }).length;
+            var j = d.cities.filter(function (c) { return c.juryStatus === 'published'; }).length;
+            t.innerHTML = '<b>' + d.totalPostes + ' postes</b> confirmés · <b>' + a + ' / 7</b> avis officiels · <b>' + j + '</b> jurys publiés';
+          }
+          var g = document.getElementById('resid-cities');
+          if (g) {
+            var h = '';
+            d.cities.forEach(function (c) {
+              var b = c.juryStatus === 'published' ? ['Jury publié', '#E3F2EF', '#14685C'] : (c.avisUrl ? ['Jury en attente', '#F1F4F5', '#7B8A99'] : ['Avis en attente', '#F1F4F5', '#7B8A99']);
+              h += '<div style="border:1px solid #EDF1F4;border-radius:14px;padding:12px"><div style="font-weight:800;font-size:15px">' + c.city + '</div><div style="font-size:22px;font-weight:800;margin-top:4px">' + (c.postes === null ? '—' : c.postes) + ' <span style="font-size:12px;font-weight:600;color:#7B8A99">postes</span></div><span style="display:inline-block;font-size:11px;font-weight:800;padding:4px 8px;border-radius:999px;margin-top:6px;background:' + b[1] + ';color:' + b[2] + '">' + b[0] + '</span></div>';
+            });
+            g.innerHTML = h;
+          }
+        }).catch(function () {});
+      })();
+      </script>
 
       <section id="atlas" style="max-width:1100px;margin:26px auto 6px;padding:0 16px">
         <div style="background:linear-gradient(135deg,#0e2a44,#0e7c7b);border-radius:20px;padding:18px;color:#fff;box-shadow:0 14px 30px rgba(14,42,68,.25)">
