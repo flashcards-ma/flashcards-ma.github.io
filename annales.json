@@ -1,0 +1,733 @@
+{
+  "updated": "2026-11-12",
+  "totalQuestions": 224,
+  "cities": [
+    {
+      "city": "Rabat",
+      "code": "FMPR",
+      "sessions": [
+        {
+          "id": "fmpr-residanat-2026-06",
+          "type": "Résidanat",
+          "label": "Juin 2026",
+          "questions": 20,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "Le nerf radial : origine, trajet, rapports, et distribution."},
+                {"q": "L'aorte abdominale : origine, trajet, branches collatérales, rapports et terminaison."},
+                {"q": "La loge thyroïdienne : parois et contenu."},
+                {"q": "Le triangle de Scarpa : parois et contenu."}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Hémolyse : mécanismes et méthodes d'exploration."},
+                {"q": "Hémostase : facteurs ; mécanismes et méthodes d'exploration.", "p": "Hémostase primaire"},
+                {"q": "Lipoprotéines plasmatiques : structure, métabolisme, exploration et classification des hyperlipoprotéinémies", "p": "Structure, exploration et classification des hyperlipoprotéinémies"},
+                {"q": "Exploration biologique de l'inflammation : vitesse de sédimentation et protéines de l'inflammation", "p": "Protéines de l'inflammation"}
+              ]
+            },
+            {
+              "name": "Pathologie médicale",
+              "questions": [
+                {"q": "Ictère choléstatique : conduite diagnostique"},
+                {"q": "Tuberculose péritonéale : diagnostic, évolution et traitement"},
+                {"q": "Maladie de Behçet : physiopathologie, diagnostic et traitement", "p": "Maladie de Behçet : diagnostic et traitement"},
+                {"q": "Corticothérapie au long cours : règles de prescription et effets secondaires."}
+              ]
+            },
+            {
+              "name": "Pathologie chirurgicale",
+              "questions": [
+                {"q": "Cancer du rectum : épidémiologie, anatomie pathologique, classification, diagnostic, pronostic, principes du traitement"},
+                {"q": "Kyste hydatique du foie : épidémiologie, diagnostic, complications, principes du traitement et prévention"},
+                {"q": "Cholécystites aiguës diagnostic et principes thérapeutiques"},
+                {"q": "Cataracte : diagnostic, principes de traitement et de prévention", "p": "Cataracte : diagnostic, principes de traitement"}
+              ]
+            },
+            {
+              "name": "Urgences médicales",
+              "questions": [
+                {"q": "Convulsion du nourrisson : diagnostic et traitement"},
+                {"q": "Grosse jambe rouge aiguë : conduite à tenir"}
+              ]
+            },
+            {
+              "name": "Urgences chirurgicales",
+              "questions": [
+                {"q": "Hémorragie digestive haute : diagnostic et conduite à tenir"},
+                {"q": "Angiocholites aiguës : diagnostic et conduite à tenir"}
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fmpr-internat-2026-06",
+          "type": "Internat",
+          "label": "Juin 2026",
+          "questions": 20,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "L'estomac : description, rapports, vaisseaux et nerfs", "p": "L'estomac : vaisseaux et nerfs"},
+                {"q": "La loge duodéno-pancréatique : contenu et rapports."},
+                {"q": "Le pédicule hépatique : constitution et rapports."},
+                {"q": "Le nerf sciatique : origine, trajet, rapports et branches terminales."}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Hormones thyroïdiennes : nature, origine, actions physiologiques et régulation de la sécrétion"},
+                {"q": "Actions biologiques des radiations ionisantes et radioprotection : Actions physico-chimiques et cellulaires – Effets déterministes – Effets stochastiques – Notions de radioprotection dans le secteur médical.", "p": "Actions biologiques des radiations"},
+                {"q": "Equilibre acido-basique : régulation du pH et de l'équilibre acido-basique"},
+                {"q": "Exploration biologique de l'inflammation : vitesse de sédimentation et protéines de l'inflammation", "p": "Exploration biologique de l'inflammation : protéines de l'inflammation"}
+              ]
+            },
+            {
+              "name": "Pathologie médicale",
+              "questions": [
+                {"q": "Syndromes lymphoprolifératifs : gammapathie monoclonale, leucémie lymphoïde chronique, myélome multiple", "p": "Leucémie lymphoïde chronique : diagnostic et principes thérapeutiques"},
+                {"q": "Purpura : démarche diagnostique"},
+                {"q": "Fièvre typhoïde : épidémiologie, diagnostic, traitement et prévention"},
+                {"q": "Fièvre boutonneuse méditerranéenne : épidémiologie, diagnostic, traitement et prévention"}
+              ]
+            },
+            {
+              "name": "Pathologie chirurgicale",
+              "questions": [
+                {"q": "Cancer de la thyroïde : anatomie pathologique, diagnostic et traitement"},
+                {"q": "Cancer du sein épidémiologie, anatomie pathologique et classification, diagnostic, traitement"},
+                {"q": "Traitement chirurgical des goitres : bases du traitement chirurgical, principales méthodes indications"},
+                {"q": "Tumeurs de la surrénale : circonstances de découverte et démarche diagnostique"}
+              ]
+            },
+            {
+              "name": "Urgences médicales",
+              "questions": [
+                {"q": "Hémorragie méningée : conduite à tenir"},
+                {"q": "Intoxication aiguë par le monoxyde de carbone : diagnostic et traitement"}
+              ]
+            },
+            {
+              "name": "Urgences chirurgicales",
+              "questions": [
+                {"q": "Plaies du coeur : diagnostic et conduite à tenir"},
+                {"q": "Rupture utérine : diagnostic et conduite à tenir"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Casablanca",
+      "code": "FMPC",
+      "sessions": [
+        {
+          "id": "fmpc-residanat-2024-01",
+          "type": "Résidanat",
+          "label": "Janvier 2024",
+          "questions": 19,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "La loge rénale", "p": "Le rein droit : rapports"},
+                {"q": "Les uretères", "p": "Uretère pelvien chez la femme : rapports"},
+                {"q": "Le creux poplité"}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Le métabolisme du fer"},
+                {"q": "Les sécrétions digestives : salive, gastrique, biliaire, pancréatique et intestinale", "p": "La sécrétion pancréatique"},
+                {"q": "L'hématose : physiologie et exploration"},
+                {"q": "La broncho motricité : physiologie et exploration"}
+              ]
+            },
+            {
+              "name": "Médecine · admissibilité",
+              "questions": [
+                {"q": "Le lupus érythémateux disséminé : diagnostic, clinique et biologique, pronostic, traitement", "p": "Lupus érythémateux systémique : clinique paraclinique et traitement"},
+                {"q": "Le syndrome de Gougerot-Sjogren : étude clinique et paraclinique", "p": "Gougerot Sjögren : clinique et paraclinique"},
+                {"q": "Les hépatites virales (B-D-C) : agents responsables, tableau clinique, formes cliniques, diagnostic positif, évolution, pronostic, principes du traitement", "p": "Hépatite virale C"},
+                {"q": "Le diabète sucré : physiopathogénie, pathogénie, diagnostic, traitement, surveillance, éducation, complications dégénératives du diabète", "p": "Diabète type 2 : physiopathologie, diagnostic et principe du traitement"}
+              ]
+            },
+            {
+              "name": "Chirurgie · admissibilité",
+              "questions": [
+                {"q": "Les fractures de la diaphyse humérale : diagnostic et traitement", "p": "Fracture de la diaphyse humérale : diagnostic et principe thérapeutique"},
+                {"q": "La lithiase urinaire", "p": "Complications de la lithiase rénale"},
+                {"q": "Le cancer du pancréas", "p": "Adénocarcinome de la tête du pancréas : diagnostic et principes thérapeutiques"},
+                {"q": "La lithiase urinaire", "p": "Conduite à tenir devant une colique néphrétique"},
+                {"q": "Les fractures du massif trochantérien : anatomie pathologique, classification, complications", "p": "Fracture trochantérienne : diagnostic et principe thérapeutique"}
+              ]
+            },
+            {
+              "name": "Médecine · admission",
+              "questions": [
+                {"q": "L'hypoglycémie grave"},
+                {"q": "CAT devant un ictère cholostatique"}
+              ]
+            },
+            {
+              "name": "Chirurgie · admission",
+              "questions": [
+                {"q": "L'appendicite aiguë"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Fès",
+      "code": "FMPF",
+      "sessions": [
+        {
+          "id": "fmpf-residanat-2026-06",
+          "type": "Résidanat",
+          "label": "Juin 2026",
+          "questions": 13,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "La région axillaire"},
+                {"q": "La loge thyroïdienne"},
+                {"q": "L'articulation du genou"},
+                {"q": "Le nerf grand sciatique"}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Régulation de la glycémie"},
+                {"q": "La cellule cancéreuse : propriétés et morphologie"},
+                {"q": "Les étapes de l'inflammation et les médiateurs de l'inflammation"},
+                {"q": "Régulation du calcium"}
+              ]
+            },
+            {
+              "name": "Médecine · admissibilité",
+              "questions": [
+                {"q": "Tuberculose péritonéale : diagnostic positif et traitement"},
+                {"q": "Diagnostic des AVC ischémiques"},
+                {"q": "Le syndrome hémorragique du nouveau-né"}
+              ]
+            },
+            {
+              "name": "Chirurgie · admissibilité",
+              "questions": [
+                {"q": "Cancer du bas rectum : diagnostic et traitement"},
+                {"q": "Diagnostic et traitement du reflux vésico-urétéro-rénal."}
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fmpf-internat-2026-06",
+          "type": "Internat",
+          "label": "Juin 2026",
+          "questions": 4,
+          "note": "Biologie uniquement pour l'instant",
+          "matieres": [
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Régulation de la glycémie"},
+                {"q": "Les immunoglobulines : structure et fonction."},
+                {"q": "Méthodes de diagnostic en virologie : directes et indirectes"},
+                {"q": "Hémostase primaire : physiologie, exploration"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Marrakech",
+      "code": "FMPM",
+      "sessions": [
+        {
+          "id": "fmpm-residanat-2026-06",
+          "type": "Résidanat",
+          "label": "Juin 2026",
+          "questions": 20,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "Œil.", "p": "Anatomie de la cornée"},
+                {"q": "Articulation du coude.", "p": "Surfaces articulaires et moyens d'union"},
+                {"q": "Côlon.", "p": "Anatomie et vascularisation du côlon droit"},
+                {"q": "Nerf optique."}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Antibiotiques : spectre, mécanismes d'action, mécanismes de résistances.", "p": "Les mécanismes d'action"},
+                {"q": "Système du complément : nomenclature, voies d'activation, variations physiopathologiques", "p": "Voies d'activation et variations physiopathologiques"},
+                {"q": "Immunoglobulines : structure, fonctions, variations physiopathologiques.", "p": "Fonctions et variations physiopathologiques"},
+                {"q": "Globule rouge : morphologie, physiologie."}
+              ]
+            },
+            {
+              "name": "Médecine · admissibilité",
+              "questions": [
+                {"q": "Endocardites bactériennes.", "p": "Complications de l'endocardite infectieuse subaiguë"},
+                {"q": "Hyperthyroïdies.", "p": "Démarche diagnostique devant une hyperthyroïdie"},
+                {"q": "Valvulopathies rhumatismales.", "p": "Diagnostic positif et complications de l'insuffisance aortique chronique"},
+                {"q": "Sarcoïdose.", "p": "Formes cliniques de la sarcoïdose systémique"}
+              ]
+            },
+            {
+              "name": "Chirurgie · admissibilité",
+              "questions": [
+                {"q": "Traumatismes de la cheville.", "p": "Diagnostic et traitement des fractures malléolaires de la cheville chez l'adulte"},
+                {"q": "Tumeurs de vessie.", "p": "Diagnostic positif et classification"},
+                {"q": "Hypertrophies prostatiques.", "p": "Moyens et indications thérapeutiques"},
+                {"q": "Lithiases vésiculaires.", "p": "Physiopathologie et complications"}
+              ]
+            },
+            {
+              "name": "Urgences médicales · admission",
+              "questions": [
+                {"q": "Hypoglycémie", "p": "Hypoglycémie chez le diabétique"}
+              ]
+            },
+            {
+              "name": "CAT médicales · admission",
+              "questions": [
+                {"q": "CAT devant une thrombose aiguë.", "p": "CAT devant thrombose veineuse aiguë du membre inférieur"}
+              ]
+            },
+            {
+              "name": "Urgences chirurgicales · admission",
+              "questions": [
+                {"q": "Volvulus du sigmoïde.", "p": "Diagnostic et traitement"}
+              ]
+            },
+            {
+              "name": "CAT chirurgicales · admission",
+              "questions": [
+                {"q": "CAT devant un syndrome de Volkman.", "p": "CAT devant syndrome de loge aiguë des membres"}
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fmpm-internat-2026-06",
+          "type": "Internat",
+          "label": "Juin 2026",
+          "questions": 20,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "Articulation de l'épaule.", "p": "Surfaces articulaires et moyens d'union"},
+                {"q": "Région carotidienne."},
+                {"q": "Creux poplité."},
+                {"q": "Creux axillaire."}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Lymphocytes : morphologie, fonction."},
+                {"q": "Polynucléaires : morphologie, fonction."},
+                {"q": "Hémostase : physiologie, exploration.", "p": "Hémostase primaire"},
+                {"q": "Hypersensibilité immédiate, retardée, à complexes immuns.", "p": "Hypersensibilité immédiate"}
+              ]
+            },
+            {
+              "name": "Médecine · admissibilité",
+              "questions": [
+                {"q": "Insuffisance rénale chronique."},
+                {"q": "Rhumatisme articulaire aigu."},
+                {"q": "Diabète sucré.", "p": "Complications du diabète de type 2"},
+                {"q": "Syndrome néphrotique."}
+              ]
+            },
+            {
+              "name": "Chirurgie · admissibilité",
+              "questions": [
+                {"q": "Hypertrophies prostatiques."},
+                {"q": "Lithiases vésiculaires."},
+                {"q": "Kyste hydatique du foie"},
+                {"q": "Cancer du sein."}
+              ]
+            },
+            {
+              "name": "Urgences médicales · admission",
+              "questions": [
+                {"q": "Hypoglycémie", "p": "Hypoglycémie chez le diabétique"}
+              ]
+            },
+            {
+              "name": "CAT médicales · admission",
+              "questions": [
+                {"q": "CAT devant une thrombose aiguë.", "p": "Thrombose veineuse des membres inférieurs"}
+              ]
+            },
+            {
+              "name": "Urgences chirurgicales · admission",
+              "questions": [
+                {"q": "Volvulus du sigmoïde.", "p": "Volvulus du sigmoïde"}
+              ]
+            },
+            {
+              "name": "CAT chirurgicales · admission",
+              "questions": [
+                {"q": "CAT devant un syndrome de Volkman.", "p": "Syndrome de loge"}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Agadir",
+      "code": "FMPA",
+      "sessions": [
+        {
+          "id": "fmpa-residanat-2026-06",
+          "type": "Résidanat",
+          "label": "Juin 2026",
+          "questions": 20,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "Vascularisation de l'encéphale : le polygone de Willis."},
+                {"q": "Le cervelet"},
+                {"q": "La loge thyroïdienne."},
+                {"q": "Le trigone fémoral (triangle de Scarpa)."}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Le globule rouge : structure, fonctions et moyens d'exploration"},
+                {"q": "Mycobacterium tuberculosis"},
+                {"q": "Antibiotiques : classification, mode d'action et mécanismes de résistance"},
+                {"q": "Métabolisme phosphocalcique : métabolisme, régulation, exploration"}
+              ]
+            },
+            {
+              "name": "Médecine · admissibilité",
+              "questions": [
+                {"q": "La maladie coeliaque : physiopathologie, manifestations cliniques, diagnostic positif, traitement"},
+                {"q": "La tuberculose péritonéale : diagnostic positif, diagnostic différentiel."},
+                {"q": "Les infections respiratoires aiguës basses communautaires.", "p": "La pneumonie communautaire"},
+                {"q": "AVC ischémiques : diagnostic, étiologies et traitement"}
+              ]
+            },
+            {
+              "name": "Chirurgie · admissibilité",
+              "questions": [
+                {"q": "Ictères chirurgicaux : diagnostic et traitement"},
+                {"q": "Artériopathies oblitérantes des membres inférieurs : diagnostic positif et prévention, exploration et étiologies"},
+                {"q": "Dissection de l'aorte thoracique : diagnostic et traitement"},
+                {"q": "Fractures du col fémoral : clinique, classifications et traitement"}
+              ]
+            },
+            {
+              "name": "Médecine · admission",
+              "questions": [
+                {"q": "Le traitement des exacerbations aiguës des broncho-pneumopathies chroniques obstructives"},
+                {"q": "Conduite à tenir devant des céphalées aiguës."}
+              ]
+            },
+            {
+              "name": "Chirurgie · admission",
+              "questions": [
+                {"q": "CAT devant une entorse de la cheville."},
+                {"q": "CAT devant traumatisme splénique"}
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fmpa-internat-2024-01",
+          "type": "Internat",
+          "label": "Janvier 2024",
+          "questions": 20,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "Le rectum."},
+                {"q": "Le duodéno-pancréas.", "p": "Le pancréas"},
+                {"q": "Le conduit thoracique."},
+                {"q": "La trachée (cervicale et thoracique)"}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Mycobacterium tuberculosis"},
+                {"q": "Métabolisme du fer"},
+                {"q": "Le paludisme : épidémiologie, pouvoir pathogène du parasite, diagnostic, prophylaxie"},
+                {"q": "L'inflammation", "p": "Inflammation chronique"}
+              ]
+            },
+            {
+              "name": "Médecine · admissibilité",
+              "questions": [
+                {"q": "Erythème noueux : démarche diagnostique"},
+                {"q": "Les formes cliniques de la dépression"},
+                {"q": "Anémies mégaloblastiques : physiopathologie, diagnostic et traitement"},
+                {"q": "Syphilis primo-secondaire : interprétation des résultats sérologiques, diagnostic et traitement."}
+              ]
+            },
+            {
+              "name": "Chirurgie · admissibilité",
+              "questions": [
+                {"q": "Traumatismes fermés du foie : classification et démarche diagnostique"},
+                {"q": "Physiopathologie et traitement de l'hypertension intracrânienne."},
+                {"q": "Etiopathologie et physiopathologie des hémorragies sous-arachnoïdiennes aiguës spontanées"},
+                {"q": "Hémorragies de la délivrance : diagnostic et étiologies."}
+              ]
+            },
+            {
+              "name": "Médecine · admission",
+              "questions": [
+                {"q": "Conduite à tenir devant un syndrome malin des neuroleptiques."},
+                {"q": "Démarche diagnostique devant une douleur thoracique aiguë."}
+              ]
+            },
+            {
+              "name": "Chirurgie · admission",
+              "questions": [
+                {"q": "CAT devant une plaie thoracique"},
+                {"q": "Diagnostic et conduite à tenir devant une rupture utérine."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Oujda",
+      "code": "FMPO",
+      "sessions": [
+        {
+          "id": "fmpo-residanat-2022-12",
+          "type": "Résidanat",
+          "label": "Décembre 2022",
+          "questions": 20,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "L'uretère", "p": "L'uretère pelvien chez l'homme"},
+                {"q": "Le drainage lymphatique cervico-facial"},
+                {"q": "L'oesophage : description, rapports des différentes portions", "p": "Œsophage thoracique"},
+                {"q": "La charnière cervico-occipitale"}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Coagulation : physiologie et exploration"},
+                {"q": "Les marqueurs tumoraux"},
+                {"q": "La sécrétion gastrique"},
+                {"q": "Système du complément : nomenclature, voies d'activation, variations physiopathologiques"}
+              ]
+            },
+            {
+              "name": "Pathologie médicale",
+              "questions": [
+                {"q": "Les endocardites infectieuses : physiopathologie, diagnostic et traitement", "p": "Endocardite infectieuse sur insuffisance mitrale : physiopathologie, diagnostic et traitement"},
+                {"q": "Les eczémas de l'adulte et de l'enfant (eczéma de contact et dermatite atopique) : aspects cliniques et traitement", "p": "Eczéma de contact : aspects cliniques et traitement"},
+                {"q": "La syphilis primo-secondaire : diagnostic et traitement", "p": "Syphilis primo-secondaire : diagnostic et traitement"},
+                {"q": "La corticothérapie au long cours : règles de prescription et effets secondaires"}
+              ]
+            },
+            {
+              "name": "Pathologie chirurgicale",
+              "questions": [
+                {"q": "Le cancer du larynx."},
+                {"q": "L'hydrocéphalie chez l'enfant.", "p": "Hydrocéphalie chez l'enfant : diagnostic positif, plans thérapeutiques"},
+                {"q": "Le cancer de l'estomac", "p": "Cancer de l'estomac : diagnostic positif, bilan d'extension, principes thérapeutiques"},
+                {"q": "Le cancer du sein.", "p": "Cancer du sein : diagnostic positif, bilan d'extension, principes thérapeutiques"}
+              ]
+            },
+            {
+              "name": "Urgences médicales",
+              "questions": [
+                {"q": "CAT devant une embolie pulmonaire aiguë", "p": "Embolie pulmonaire aiguë massive : diagnostic positif et traitement"},
+                {"q": "CAT devant une hémorragie digestive haute", "p": "Conduite à tenir devant une hémorragie digestive haute"}
+              ]
+            },
+            {
+              "name": "Urgences chirurgicales",
+              "questions": [
+                {"q": "CAT devant une grosse bourse aiguë de l'enfant", "p": "Conduite à tenir devant une grosse bourse aiguë de l'enfant et de l'adolescent"},
+                {"q": "CAT devant une ischémie aiguë des membres inférieurs", "p": "Conduite à tenir devant une ischémie des membres inférieurs d'origine embolique"}
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fmpo-internat-2025-06",
+          "type": "Internat",
+          "label": "Juin 2025",
+          "questions": 20,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "Le nerf grand sciatique."},
+                {"q": "La plante du pied."},
+                {"q": "Le rectum."},
+                {"q": "La région axillaire."}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Physiopathologie de l'athérosclérose."},
+                {"q": "Groupes érythrocytaires : antigènes, anticorps et leurs applications."},
+                {"q": "La filtration glomérulaire."},
+                {"q": "Métabolisme et exploration des hormones sexuelles."}
+              ]
+            },
+            {
+              "name": "Pathologie médicale",
+              "questions": [
+                {"q": "Le reflux gastro-œsophagien de l'adulte : diagnostic, complications et traitement."},
+                {"q": "Insuffisance rénale chronique.", "p": "Insuffisance rénale chronique : diagnostic et principes du traitement"},
+                {"q": "Le myélome multiple : physiopathologie, diagnostic et principes thérapeutiques."},
+                {"q": "Les leucémies aiguës."}
+              ]
+            },
+            {
+              "name": "Pathologie chirurgicale",
+              "questions": [
+                {"q": "Le mégacôlon congénital."},
+                {"q": "Le diagnostic d'une tumeur abdominale de l'enfant."},
+                {"q": "L'épiphysiolyse fémorale supérieure."},
+                {"q": "Le cancer du larynx."}
+              ]
+            },
+            {
+              "name": "Urgences médicales",
+              "questions": [
+                {"q": "Embolie pulmonaire aiguë.", "p": "CAT devant une embolie pulmonaire aiguë"},
+                {"q": "Dyskaliémie.", "p": "CAT devant une hyper- et une hypokaliémie"}
+              ]
+            },
+            {
+              "name": "Urgences chirurgicales",
+              "questions": [
+                {"q": "Syndrome des loges.", "p": "CAT devant un syndrome des loges"},
+                {"q": "Brûlure caustique oeso-gastro-duodénale.", "p": "CAT devant une brûlure caustique oeso-gastro-duodénale."}
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "city": "Tanger",
+      "code": "FMPT",
+      "sessions": [
+        {
+          "id": "fmpt-residanat-2025-04",
+          "type": "Résidanat",
+          "label": "Avril 2025",
+          "questions": 20,
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "L'utérus"},
+                {"q": "L'estomac"},
+                {"q": "L'articulation du genou"},
+                {"q": "Le triangle de Scarpa : paroi et contenu"}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Réplication de l'ADN"},
+                {"q": "L'apoptose : mécanisme cellulaire et moléculaire"},
+                {"q": "La cellule cancéreuse : propriétés et morphologie"},
+                {"q": "Le potentiel de repos et d'action des cellules nerveuses"}
+              ]
+            },
+            {
+              "name": "Pathologie médicale",
+              "questions": [
+                {"q": "Diagnostic des accidents vasculaires cérébraux ischémiques", "p": "AVCI : formes cliniques"},
+                {"q": "Sarcoïdose médiastino-pulmonaire : diagnostic, examens paracliniques et traitement"},
+                {"q": "Cancer bronchique primitif : présentation radio-clinique", "p": "Cancer bronchique primitif : diagnostic"},
+                {"q": "Maladie de Parkinson : diagnostic et traitement"}
+              ]
+            },
+            {
+              "name": "Pathologie chirurgicale",
+              "questions": [
+                {"q": "Cancer du col utérin : facteurs de risque, diagnostic et bilan d'extension"},
+                {"q": "Artériopathies oblitérantes des membres inférieurs : diagnostic positif et prévention"},
+                {"q": "Décrire les complications des fractures du bassin", "p": "Complications des fractures du bassin"},
+                {"q": "Kyste hydatique du foie (KHF) : diagnostic et traitement"}
+              ]
+            },
+            {
+              "name": "Urgences médicales",
+              "questions": [
+                {"q": "Conduite à tenir devant un syndrome de Guillain-Barré.", "p": "Syndrome de Guillain-Barré : diagnostic et traitement"},
+                {"q": "Le traitement des exacerbations aiguës des bronchopneumopathies obstructives"}
+              ]
+            },
+            {
+              "name": "Urgences chirurgicales",
+              "questions": [
+                {"q": "Les fractures ouvertes de jambe : anatomopathologie et traitement"},
+                {"q": "Conduite à tenir devant une appendicite aiguë", "p": "Appendicite aiguë : diagnostic et traitement"}
+              ]
+            }
+          ]
+        },
+        {
+          "id": "fmpt-internat-2026-06",
+          "type": "Internat",
+          "label": "Juin 2026",
+          "questions": 8,
+          "note": "Anatomie + biologie uniquement pour l'instant",
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {"q": "Le coeur : configuration externe, configuration interne"},
+                {"q": "Le coeur : vascularisation et innervation"},
+                {"q": "L'aorte thoracique : origine, trajet, branches collatérales et rapports"},
+                {"q": "Le rectum"}
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {"q": "Les mécanismes d'adhésion cellulaires"},
+                {"q": "L'apoptose : mécanisme cellulaire et moléculaire"},
+                {"q": "Le cycle cellulaire"},
+                {"q": "Organisation générale du génome humain"}
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
