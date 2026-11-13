@@ -4726,7 +4726,7 @@
                   "q": "Configuration externe de l'utérus"
                 },
                 {
-                  "q": "Loge protatique: Limites et Rapports"
+                  "q": "Loge prostatique : Limites et Rapports"
                 }
               ]
             },
@@ -4734,16 +4734,16 @@
               "name": "Biologie",
               "questions": [
                 {
-                  "q": "La fonction corticotrope : régulation et effets biologique"
+                  "q": "La fonction corticotrope : régulation et effets biologiques"
                 },
                 {
-                  "q": "Hormones thyroïdiennes : transport plasmatique et effets physiologique"
+                  "q": "Hormones thyroïdiennes : transport plasmatique et effets physiologiques"
                 },
                 {
-                  "q": "Système ABO : Biochimie, génétique et determination"
+                  "q": "Système ABO : Biochimie, génétique et détermination"
                 },
                 {
-                  "q": "K+ : Répartition bilan et régulation"
+                  "q": "K+ : Répartition, bilan et régulation"
                 }
               ]
             },
@@ -4757,7 +4757,7 @@
                   "q": "Toxidermies : Syndrome de Lyell : Diagnostic positif et étiologique"
                 },
                 {
-                  "q": "Septicémie a staphylocoque : Diagnostic et traitement"
+                  "q": "Septicémie à staphylocoque : Diagnostic et traitement"
                 },
                 {
                   "q": "PFLA : Diagnostic et traitement"
@@ -4768,10 +4768,10 @@
               "name": "Pathologie chirurgicale",
               "questions": [
                 {
-                  "q": "Complications des fibromes utérin"
+                  "q": "Complications des fibromes utérins"
                 },
                 {
-                  "q": "Traitement des fibromes utérin"
+                  "q": "Traitement des fibromes utérins"
                 },
                 {
                   "q": "Cancer de l'estomac : Diagnostic et traitement"
@@ -4785,10 +4785,10 @@
               "name": "Urgences médicales",
               "questions": [
                 {
-                  "q": "CAT devant un Accès palustre"
+                  "q": "CAT devant un accès palustre"
                 },
                 {
-                  "q": "Pneumothorax spontanée"
+                  "q": "Pneumothorax spontané"
                 },
                 {
                   "q": "CAT devant colique néphrétique"
@@ -4799,7 +4799,7 @@
               "name": "Urgences chirurgicales",
               "questions": [
                 {
-                  "q": "Appendicite aigue"
+                  "q": "Appendicite aiguë"
                 }
               ]
             }
@@ -4818,10 +4818,10 @@
                   "q": "Vascularisation de l'estomac"
                 },
                 {
-                  "q": "Articulation scapulo humérale : moyens d'union"
+                  "q": "Articulation scapulo-humérale : moyens d'union"
                 },
                 {
-                  "q": "Région Carotidienne : Loge Ostéo-musculaire"
+                  "q": "Région carotidienne : Loge ostéo-musculaire"
                 },
                 {
                   "q": "Artère coronaire droite"
@@ -4841,7 +4841,7 @@
                   "q": "Calcium : répartition et régulation"
                 },
                 {
-                  "q": "Sécrétion salivaire: Composition et rôles"
+                  "q": "Sécrétion salivaire : Composition et rôles"
                 }
               ]
             },
@@ -4849,16 +4849,16 @@
               "name": "Pathologie médicale",
               "questions": [
                 {
-                  "q": "Dépistage Du cancer du col"
+                  "q": "Dépistage du cancer du col"
                 },
                 {
-                  "q": "Dépistage et diagnostic précoce cancer du sein"
+                  "q": "Dépistage et diagnostic précoce du cancer du sein"
                 },
                 {
-                  "q": "Ulcère duodénal : diagnostiquer positif , évolution , traitement"
+                  "q": "Ulcère duodénal : diagnostic positif, évolution, traitement"
                 },
                 {
-                  "q": "RAA : ethiopathogenie , dg , traitement"
+                  "q": "RAA : étiopathogénie, diagnostic, traitement"
                 }
               ]
             },
@@ -4872,10 +4872,10 @@
                   "q": "Traitement des fibromes"
                 },
                 {
-                  "q": "Complications des fractures pertrochanterienne"
+                  "q": "Complications des fractures pertrochantériennes"
                 },
                 {
-                  "q": "Glaucome epidemiologie, diagnostic, dépistage"
+                  "q": "Glaucome : épidémiologie, diagnostic, dépistage"
                 }
               ]
             },
@@ -4889,7 +4889,7 @@
                   "q": "CAT devant hépatite fulminante"
                 },
                 {
-                  "q": "Coeur pulmonaire aigue : diagnostic positif étiologique et traitement"
+                  "q": "Cœur pulmonaire aigu : diagnostic positif, étiologique et traitement"
                 }
               ]
             },
