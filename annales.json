@@ -1,6 +1,6 @@
 {
-  "updated": "2026-11-14",
-  "totalQuestions": 2245,
+  "updated": "2026-11-16",
+  "totalQuestions": 2253,
   "cities": [
     {
       "city": "Rabat",
@@ -12601,6 +12601,49 @@
       "city": "Tanger",
       "code": "FMPT",
       "sessions": [
+        {
+          "id": "fmpt-residanat-2026-11",
+          "type": "Résidanat",
+          "label": "Novembre 2026",
+          "questions": 8,
+          "note": "Anatomie + biologie uniquement pour l'instant",
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {
+                  "q": "Triangle de Scarpa"
+                },
+                {
+                  "q": "Pédicule hépatique"
+                },
+                {
+                  "q": "Loge carotidienne"
+                },
+                {
+                  "q": "Nerf facial"
+                }
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {
+                  "q": "La ventilation pulmonaire"
+                },
+                {
+                  "q": "L'angiogenèse"
+                },
+                {
+                  "q": "Potentiel d'action et de repos de la cellule nerveuse"
+                },
+                {
+                  "q": "Cycle cellulaire"
+                }
+              ]
+            }
+          ]
+        },
         {
           "id": "fmpt-residanat-2025-04",
           "type": "Résidanat",
