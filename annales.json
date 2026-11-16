@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-16",
-  "totalQuestions": 2261,
+  "totalQuestions": 2269,
   "cities": [
     {
       "city": "Rabat",
@@ -4707,6 +4707,49 @@
       "city": "Casablanca",
       "code": "FMPC",
       "sessions": [
+        {
+          "id": "fmpc-residanat-2026-11",
+          "type": "Résidanat",
+          "label": "Novembre 2026",
+          "questions": 8,
+          "note": "Anatomie + biologie uniquement pour l'instant",
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {
+                  "q": "Artère rénale droite"
+                },
+                {
+                  "q": "Anatomie descriptive de l'aorte thoracique"
+                },
+                {
+                  "q": "Vascularisation artérielle du foie"
+                },
+                {
+                  "q": "Vascularisation artérielle et veineuse de la glande mammaire"
+                }
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {
+                  "q": "Ventilation pulmonaire : physiologie et exploration"
+                },
+                {
+                  "q": "Cellule cancéreuse"
+                },
+                {
+                  "q": "Hémostase primaire : physiologique et exploration"
+                },
+                {
+                  "q": "Métabolisme du fer"
+                }
+              ]
+            }
+          ]
+        },
         {
           "id": "fmpc-residanat-2026-06",
           "type": "Résidanat",
