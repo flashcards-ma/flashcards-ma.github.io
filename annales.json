@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-16",
-  "totalQuestions": 2253,
+  "totalQuestions": 2261,
   "cities": [
     {
       "city": "Rabat",
@@ -9257,6 +9257,49 @@
       "city": "Agadir",
       "code": "FMPA",
       "sessions": [
+        {
+          "id": "fmpa-residanat-2026-11",
+          "type": "Résidanat",
+          "label": "Novembre 2026",
+          "questions": 8,
+          "note": "Anatomie + biologie uniquement pour l'instant",
+          "matieres": [
+            {
+              "name": "Anatomie",
+              "questions": [
+                {
+                  "q": "Canal thoracique"
+                },
+                {
+                  "q": "Segmentation pulmonaire"
+                },
+                {
+                  "q": "Diaphragme"
+                },
+                {
+                  "q": "Cervelet"
+                }
+              ]
+            },
+            {
+              "name": "Biologie",
+              "questions": [
+                {
+                  "q": "Métabolisme phosphocalcique"
+                },
+                {
+                  "q": "Métabolisme du fer"
+                },
+                {
+                  "q": "VIH"
+                },
+                {
+                  "q": "Entérobactéries"
+                }
+              ]
+            }
+          ]
+        },
         {
           "id": "fmpa-residanat-2026-06",
           "type": "Résidanat",
