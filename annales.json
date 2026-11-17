@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-16",
-  "totalQuestions": 2277,
+  "totalQuestions": 2285,
   "cities": [
     {
       "city": "Rabat",
@@ -12725,8 +12725,8 @@
           "id": "fmpt-residanat-2026-11",
           "type": "Résidanat",
           "label": "Novembre 2026",
-          "questions": 8,
-          "note": "Anatomie + biologie uniquement pour l'instant",
+          "questions": 16,
+          "note": "Anatomie, biologie, médecine et chirurgie uniquement pour l'instant",
           "matieres": [
             {
               "name": "Anatomie",
@@ -12759,6 +12759,40 @@
                 },
                 {
                   "q": "Cycle cellulaire"
+                }
+              ]
+            },
+            {
+              "name": "Pathologie médicale",
+              "questions": [
+                {
+                  "q": "Dilatation des bronches"
+                },
+                {
+                  "q": "Cancer bronchique primitif"
+                },
+                {
+                  "q": "Méningite purulente"
+                },
+                {
+                  "q": "Antibiothérapie"
+                }
+              ]
+            },
+            {
+              "name": "Pathologie chirurgicale",
+              "questions": [
+                {
+                  "q": "Anévrisme de l'aorte abdominale"
+                },
+                {
+                  "q": "Artériopathie oblitérante du membre inférieur"
+                },
+                {
+                  "q": "Pancréatite aiguë"
+                },
+                {
+                  "q": "Occlusion colique"
                 }
               ]
             }
