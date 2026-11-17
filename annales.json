@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-16",
-  "totalQuestions": 2269,
+  "totalQuestions": 2277,
   "cities": [
     {
       "city": "Rabat",
@@ -4711,8 +4711,8 @@
           "id": "fmpc-residanat-2026-11",
           "type": "Résidanat",
           "label": "Novembre 2026",
-          "questions": 8,
-          "note": "Anatomie + biologie uniquement pour l'instant",
+          "questions": 16,
+          "note": "Anatomie, biologie, médecine et chirurgie uniquement pour l'instant",
           "matieres": [
             {
               "name": "Anatomie",
@@ -4745,6 +4745,40 @@
                 },
                 {
                   "q": "Métabolisme du fer"
+                }
+              ]
+            },
+            {
+              "name": "Pathologie médicale",
+              "questions": [
+                {
+                  "q": "Syndrome de glomérulonéphrite aiguë : diagnostic et complications"
+                },
+                {
+                  "q": "Diabète de type 2 : diagnostic et prise en charge"
+                },
+                {
+                  "q": "RGO : diagnostic et complications"
+                },
+                {
+                  "q": "RCH : diagnostic et complications"
+                }
+              ]
+            },
+            {
+              "name": "Pathologie chirurgicale",
+              "questions": [
+                {
+                  "q": "Traitement du cancer borderline de l'ovaire"
+                },
+                {
+                  "q": "Physiopathologie du cancer du col utérin"
+                },
+                {
+                  "q": "Diagnostic et traitement du cancer du rectum"
+                },
+                {
+                  "q": "Diagnostic positif et traitement du cancer du côlon gauche"
                 }
               ]
             }
