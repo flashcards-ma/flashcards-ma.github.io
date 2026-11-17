@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-16",
-  "totalQuestions": 2285,
+  "totalQuestions": 2293,
   "cities": [
     {
       "city": "Rabat",
@@ -5093,6 +5093,49 @@
       "city": "Fès",
       "code": "FMPF",
       "sessions": [
+        {
+          "id": "fmpf-residanat-2026-11",
+          "type": "Résidanat",
+          "label": "Novembre 2026",
+          "questions": 8,
+          "note": "Médecine et chirurgie uniquement pour l'instant",
+          "matieres": [
+            {
+              "name": "Pathologie médicale",
+              "questions": [
+                {
+                  "q": "Manifestations du RGO"
+                },
+                {
+                  "q": "Myasthénie"
+                },
+                {
+                  "q": "Traitement de l'ulcère gastrique"
+                },
+                {
+                  "q": "Diagnostic de l'AVC"
+                }
+              ]
+            },
+            {
+              "name": "Pathologie chirurgicale",
+              "questions": [
+                {
+                  "q": "Salpingite aiguë"
+                },
+                {
+                  "q": "Péritonite"
+                },
+                {
+                  "q": "Cancer du col utérin"
+                },
+                {
+                  "q": "Lithiase biliaire principale"
+                }
+              ]
+            }
+          ]
+        },
         {
           "id": "fmpf-residanat-2026-06",
           "type": "Résidanat",
