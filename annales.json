@@ -1,6 +1,6 @@
 {
   "updated": "2026-11-16",
-  "totalQuestions": 2293,
+  "totalQuestions": 2301,
   "cities": [
     {
       "city": "Rabat",
@@ -9381,8 +9381,8 @@
           "id": "fmpa-residanat-2026-11",
           "type": "Résidanat",
           "label": "Novembre 2026",
-          "questions": 8,
-          "note": "Anatomie + biologie uniquement pour l'instant",
+          "questions": 16,
+          "note": "Anatomie, biologie, médecine et chirurgie uniquement pour l'instant",
           "matieres": [
             {
               "name": "Anatomie",
@@ -9415,6 +9415,40 @@
                 },
                 {
                   "q": "Entérobactéries"
+                }
+              ]
+            },
+            {
+              "name": "Pathologie médicale",
+              "questions": [
+                {
+                  "q": "Insuffisance mitrale"
+                },
+                {
+                  "q": "Rétrécissement aortique"
+                },
+                {
+                  "q": "Tuberculose pulmonaire commune"
+                },
+                {
+                  "q": "Hyperlipidémies"
+                }
+              ]
+            },
+            {
+              "name": "Pathologie chirurgicale",
+              "questions": [
+                {
+                  "q": "Fractures de l'extrémité distale du radius"
+                },
+                {
+                  "q": "Fractures ouvertes de la jambe"
+                },
+                {
+                  "q": "Péritonite aiguë généralisée"
+                },
+                {
+                  "q": "Diagnostic étiologique de la paralysie faciale périphérique"
                 }
               ]
             }
