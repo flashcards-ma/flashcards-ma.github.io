@@ -189,9 +189,12 @@
       },
       "juryStatus": "published",
       "juryUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/jury.pdf",
-      "note": "Candidats civils avec contrat, CHU Mohammed VI.",
+      "note": "Candidats civils avec contrat, CHU Mohammed VI. Résultats d'admissibilité publiés le 19 novembre 2026 (6 candidats admissibles, médecine : 5 médecine, 1 chirurgie ; liste par ordre alphabétique).",
       "postes": 53,
-      "registration": "Formulaire Google (lien dans l'avis officiel)"
+      "registration": "Formulaire Google (lien dans l'avis officiel)",
+      "resultats": {
+        "admissibiliteUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/avis6.pdf"
+      }
     },
     {
       "avisFrUrl": "https://www.emploi-public.ma/fr/concours/download/arrete/43846a58-fb47-4738-9a3b-c54340d993e5",
@@ -280,7 +283,7 @@
       },
       "juryStatus": "published",
       "juryUrl": "https://fmpa.uiz.ac.ma/wp-content/uploads/2026/11/Tableau-JURY-RES-2026-2-1.xlsx",
-      "note": "Avis officiel en arabe ; texte français via le miroir emploi-public. Calendrier et listes des convoqués publiés le 7 novembre 2026 ; jury filière médecine publié le 9 novembre 2026 (12 membres, tableau XLSX) ; jury filière pharmacie publié le 11 novembre 2026 (12 membres). Résultats d'admissibilité pharmacie publiés le 17 novembre 2026 (liste des 5 candidats admissibles convoqués à l'épreuve d'admission, jeu. 19 nov. 2026 à 09h00, salle 4). Résultats d'admissibilité médecine publiés le 19 novembre 2026 (32 candidats admissibles ; épreuve d'admission ven. 20 nov. 2026 à 08h30).",
+      "note": "Avis officiel en arabe ; texte français via le miroir emploi-public. Calendrier et listes des convoqués publiés le 7 novembre 2026 ; jury filière médecine publié le 9 novembre 2026 (12 membres, tableau XLSX) ; jury filière pharmacie publié le 11 novembre 2026 (12 membres). Résultats d'admissibilité pharmacie publiés le 17 novembre 2026 (liste des 5 candidats admissibles convoqués à l'épreuve d'admission, jeu. 19 nov. 2026 à 09h00, salle 4). Résultats d'admissibilité médecine publiés le 19 novembre 2026 (39 candidats admissibles, liste de convocation à l'épreuve d'admission ; épreuve d'admission ven. 20 nov. 2026 à 08h30).",
       "postes": 50,
       "registration": "En ligne via fmpa.uiz.ac.ma ; dossier déposé à la faculté le jour du concours",
       "resultats": {
@@ -345,5 +348,5 @@
   "um6ss": {
     "note": "Pas de concours de résidanat en novembre 2026 à l'UM6SS. Internat en Médecine Dentaire : 7 postes, admissibilité 30 novembre 2026. Internat en Médecine : 214 postes, admissibilité 7 décembre 2026."
   },
-  "updated": "2026-11-19"
+  "updated": "2026-11-20"
 }
