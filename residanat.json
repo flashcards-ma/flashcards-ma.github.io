@@ -283,12 +283,14 @@
       },
       "juryStatus": "published",
       "juryUrl": "https://fmpa.uiz.ac.ma/wp-content/uploads/2026/11/Tableau-JURY-RES-2026-2-1.xlsx",
-      "note": "Avis officiel en arabe ; texte français via le miroir emploi-public. Calendrier et listes des convoqués publiés le 7 novembre 2026 ; jury filière médecine publié le 9 novembre 2026 (12 membres, tableau XLSX) ; jury filière pharmacie publié le 11 novembre 2026 (12 membres). Résultats d'admissibilité pharmacie publiés le 17 novembre 2026 (liste des 5 candidats admissibles convoqués à l'épreuve d'admission, jeu. 19 nov. 2026 à 09h00, salle 4). Résultats d'admissibilité médecine publiés le 19 novembre 2026 (39 candidats admissibles, liste de convocation à l'épreuve d'admission ; épreuve d'admission ven. 20 nov. 2026 à 08h30).",
+      "note": "Avis officiel en arabe ; texte français via le miroir emploi-public. Calendrier et listes des convoqués publiés le 7 novembre 2026 ; jury filière médecine publié le 9 novembre 2026 (12 membres, tableau XLSX) ; jury filière pharmacie publié le 11 novembre 2026 (12 membres). Résultats d'admissibilité pharmacie publiés le 17 novembre 2026 (liste des 5 candidats admissibles convoqués à l'épreuve d'admission, jeu. 19 nov. 2026 à 09h00, salle 4). Résultats d'admissibilité médecine publiés le 19 novembre 2026 (39 candidats admissibles, liste de convocation à l'épreuve d'admission ; épreuve d'admission ven. 20 nov. 2026 à 08h30). Résultats finaux publiés le 20 novembre 2026 : pharmacie — 2 admis définitivement (AIT BAHA Aziz, CHAKIR Otman) ; médecine — 36 admis par ordre de mérite (24 médecine, 10 chirurgie, 2 biologie), liste en 2 pages JPG ; la faculté précise que ces résultats sont provisoires en attendant la validation du procès-verbal par le ministère de tutelle.",
       "postes": 50,
       "registration": "En ligne via fmpa.uiz.ac.ma ; dossier déposé à la faculté le jour du concours",
       "resultats": {
         "admissibilitePharmacieUrl": "https://fmpa.uiz.ac.ma/wp-content/uploads/2026/11/Liste-des-admissible_concours-de-Residanats_pharamacie.jpg",
-        "admissibiliteUrl": "https://fmpa.uiz.ac.ma/wp-content/uploads/2026/11/Numerisation_20261119.pdf"
+        "admissibiliteUrl": "https://fmpa.uiz.ac.ma/wp-content/uploads/2026/11/Numerisation_20261119.pdf",
+        "finalPharmacieUrl": "https://fmpa.uiz.ac.ma/wp-content/uploads/2026/11/SKM_308e26112011130.pdf",
+        "finalUrl": "https://fmpa.uiz.ac.ma/liste-des-candidats-admis-concours-de-residanat-session-16-novembre-2026/"
       }
     },
     {
@@ -334,11 +336,12 @@
       "jury": null,
       "juryStatus": "pending",
       "juryUrl": null,
-      "note": "Avis officiel vérifié le 16 novembre 2026 (PDF scanné, avis en français + arabe, post du 9 octobre 2026) : 62 postes, médecine uniquement — médicales 30, chirurgicales 21, biologiques 11. Jury et calendrier non retrouvés. Résultats d'admissibilité publiés le 19 novembre 2026 (20 candidats admissibles ; épreuve d'admission ven. 20 nov. 2026 à 08h30, salle de lecture).",
+      "note": "Avis officiel vérifié le 16 novembre 2026 (PDF scanné, avis en français + arabe, post du 9 octobre 2026) : 62 postes, médecine uniquement — médicales 30, chirurgicales 21, biologiques 11. Jury et calendrier non retrouvés. Résultats d'admissibilité publiés le 19 novembre 2026 (20 candidats admissibles ; épreuve d'admission ven. 20 nov. 2026 à 08h30, salle de lecture). Résultats finaux publiés le 20 novembre 2026 (20 candidats admis par ordre de mérite : 6 biologie, 7 médecine, 7 chirurgie ; liste intitulée « Liste des Admis », sans la mention « définitivement »).",
       "postes": 62,
       "registration": "En ligne : efmpt.uae.ac.ma/app_res",
       "resultats": {
-        "admissibiliteUrl": "https://fmpt.ac.ma/website/wp-content/uploads/2026/11/liste-des-candidats-admissibilitA%C2%A9%EF%B8%8F.pdf"
+        "admissibiliteUrl": "https://fmpt.ac.ma/website/wp-content/uploads/2026/11/liste-des-candidats-admissibilitA%C2%A9%EF%B8%8F.pdf",
+        "finalUrl": "https://fmpt.ac.ma/website/wp-content/uploads/2026/11/noveau-version.pdf"
       }
     }
   ],
