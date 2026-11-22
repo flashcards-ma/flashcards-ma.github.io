@@ -330,13 +330,13 @@
       "calendrierUrl": null,
       "city": "Tanger",
       "code": "FMPT",
-      "convocationUrl": null,
+      "convocationUrl": "https://fmpt.ac.ma/website/2026/11/10/candidats-valide-pour-passer-le-concours-de-residanats-16-11-2026/",
       "deadline": "Avant le 1er novembre 2026",
       "exam": "16 novembre 2026",
       "jury": null,
       "juryStatus": "pending",
       "juryUrl": null,
-      "note": "Avis officiel vérifié le 16 novembre 2026 (PDF scanné, avis en français + arabe, post du 9 octobre 2026) : 62 postes, médecine uniquement — médicales 30, chirurgicales 21, biologiques 11. Jury et calendrier non retrouvés. Résultats d'admissibilité publiés le 19 novembre 2026 (20 candidats admissibles ; épreuve d'admission ven. 20 nov. 2026 à 08h30, salle de lecture). Résultats finaux publiés le 20 novembre 2026 (20 candidats admis par ordre de mérite : 6 biologie, 7 médecine, 7 chirurgie ; liste intitulée « Liste des Admis », sans la mention « définitivement »).",
+      "note": "Avis officiel vérifié le 16 novembre 2026 (PDF scanné, avis en français + arabe, post du 9 octobre 2026) : 62 postes, médecine uniquement — médicales 30, chirurgicales 21, biologiques 11. Jury et calendrier non retrouvés. Résultats d'admissibilité publiés le 19 novembre 2026 (20 candidats admissibles ; épreuve d'admission ven. 20 nov. 2026 à 08h30, salle de lecture). Résultats finaux publiés le 20 novembre 2026 (20 candidats admis par ordre de mérite : 6 biologie, 7 médecine, 7 chirurgie ; liste intitulée « Liste des Admis », sans la mention « définitivement »). Liste des candidats validés publiée le 10 novembre 2026 (34 candidats : 15 chirurgie, 12 médecine, 7 biologie).",
       "postes": 62,
       "registration": "En ligne : efmpt.uae.ac.ma/app_res",
       "resultats": {
@@ -351,5 +351,5 @@
   "um6ss": {
     "note": "Pas de concours de résidanat en novembre 2026 à l'UM6SS. Internat en Médecine Dentaire : 7 postes, admissibilité 30 novembre 2026. Internat en Médecine : 214 postes, admissibilité 7 décembre 2026."
   },
-  "updated": "2026-11-20"
+  "updated": "2026-11-22"
 }
