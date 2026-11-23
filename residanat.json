@@ -48,11 +48,12 @@
       },
       "juryStatus": "published",
       "juryUrl": "https://fmp.um5.ac.ma/sites/default/files/2026-11/Liste%20Jury%20Medecine%2016%2011%202026.pdf",
-      "note": "Résultats d'admissibilité publiés le 19 novembre 2026 (11 candidats admissibles, tous en spécialités médicales ; liste par ordre alphabétique). Épreuve d'admission : lun. 23 nov. 2026 à 08h00, Salle TEMPUS.",
+      "note": "Résultats d'admissibilité publiés le 19 novembre 2026 (11 candidats admissibles, tous en spécialités médicales ; liste par ordre alphabétique). Épreuve d'admission : lun. 23 nov. 2026 à 08h00, Salle TEMPUS. Résultats finaux publiés le 23 novembre 2026 (7 candidats admis par ordre de mérite, tous en spécialités médicales : CHERROUDI Hamza, BELCAID Abderrahmane, BOUDLAL Mohammed Bekaye, ZAGHAR Abderrahmane, BENKHAK Hamza, EL ASSAAD Yousra, ABDOULLAH Omar).",
       "postes": 10,
       "registration": "En ligne uniquement : concours-fmp.um5.ac.ma — frais 100 DH",
       "resultats": {
-        "admissibiliteUrl": "https://fmp.um5.ac.ma/sites/default/files/2026-11/Liste%20des%20Admissibles%20par%20ordre%20alphab%C3%A9tique%2016%2011%202026_0001.pdf"
+        "admissibiliteUrl": "https://fmp.um5.ac.ma/sites/default/files/2026-11/Liste%20des%20Admissibles%20par%20ordre%20alphab%C3%A9tique%2016%2011%202026_0001.pdf",
+        "finalUrl": "https://fmp.um5.ac.ma/sites/default/files/2026-11/Concours%20de%20Re%CC%81sidanat%20en%20Me%CC%81decine%20Liste%20des%20Admis%20par%20ordre%20de%20me%CC%81rite%20session%20du%2016%20Novembre%202026.pdf"
       }
     },
     {
