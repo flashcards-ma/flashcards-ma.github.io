@@ -196,11 +196,12 @@
       },
       "juryStatus": "published",
       "juryUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/jury.pdf",
-      "note": "Candidats civils avec contrat, CHU Mohammed VI. Résultats d'admissibilité publiés le 19 novembre 2026 (6 candidats admissibles, médecine : 5 médecine, 1 chirurgie ; liste par ordre alphabétique).",
+      "note": "Candidats civils avec contrat, CHU Mohammed VI. Résultats d'admissibilité publiés le 19 novembre 2026 (6 candidats admissibles : 5 médecine, 1 chirurgie ; liste par ordre alphabétique). Résultats finaux provisoires publiés le 23 novembre 2026 (option Médecine, candidats civils : 4 admis par ordre de mérite — MOUATARIF Ibtihal, TOUIL Mohamed-Saber, ISSAM Abdelali, BOURNAHAR Asmaa ; liste datée du 23/11, publiée le 24/11).",
       "postes": 53,
       "registration": "Formulaire Google (lien dans l'avis officiel)",
       "resultats": {
-        "admissibiliteUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/avis6.pdf"
+        "admissibiliteUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/avis6.pdf",
+        "finalUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/avis9.pdf"
       }
     },
     {
@@ -358,5 +359,5 @@
   "um6ss": {
     "note": "Pas de concours de résidanat en novembre 2026 à l'UM6SS. Internat en Médecine Dentaire : 7 postes, admissibilité 30 novembre 2026. Internat en Médecine : 214 postes, admissibilité 7 décembre 2026."
   },
-  "updated": "2026-11-23"
+  "updated": "2026-11-24"
 }
