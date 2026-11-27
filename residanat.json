@@ -196,12 +196,11 @@
       },
       "juryStatus": "published",
       "juryUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/jury.pdf",
-      "note": "Candidats civils avec contrat, CHU Mohammed VI. Résultats d'admissibilité publiés le 19 novembre 2026 (6 candidats admissibles : 5 médecine, 1 chirurgie ; liste par ordre alphabétique). Résultats finaux provisoires publiés le 23 novembre 2026 (option Médecine, candidats civils : 4 admis par ordre de mérite — MOUATARIF Ibtihal, TOUIL Mohamed-Saber, ISSAM Abdelali, BOURNAHAR Asmaa ; liste datée du 23/11, publiée le 24/11). Résultats finaux chirurgie publiés (liste des candidats admis, option Chirurgie, candidats civils, datée du 23 novembre 2026 : 2 admis — BENSAID Fatima Zahra, OUALLA Sara).",
+      "note": "Candidats civils avec contrat, CHU Mohammed VI. Résultats d'admissibilité publiés le 19 novembre 2026 (6 candidats admissibles : 5 médecine, 1 chirurgie ; liste par ordre alphabétique). Résultats finaux provisoires publiés le 23 novembre 2026 (option Médecine, candidats civils : 4 admis par ordre de mérite — MOUATARIF Ibtihal, TOUIL Mohamed-Saber, ISSAM Abdelali, BOURNAHAR Asmaa ; liste datée du 23/11, publiée le 24/11). Résultats finaux chirurgie : aucune liste publiée sur la page officielle du concours au 27 novembre 2026 (seule la liste provisoire Médecine y est liée) ; le lien chirurgie précédemment affiché pointait vers un calendrier du concours de Maîtres de Conférences et a été retiré.",
       "postes": 53,
       "registration": "Formulaire Google (lien dans l'avis officiel)",
       "resultats": {
         "admissibiliteUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/avis6.pdf",
-        "finalChirurgieUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/avis7.pdf",
         "finalUrl": "https://wd.fmpm.uca.ma/fmpmNew/data/avis11/avis9.pdf"
       }
     },
@@ -360,5 +359,5 @@
   "um6ss": {
     "note": "Pas de concours de résidanat en novembre 2026 à l'UM6SS. Internat en Médecine Dentaire : 7 postes, admissibilité 30 novembre 2026. Internat en Médecine : 214 postes, admissibilité 7 décembre 2026."
   },
-  "updated": "2026-11-25"
+  "updated": "2026-11-27"
 }
